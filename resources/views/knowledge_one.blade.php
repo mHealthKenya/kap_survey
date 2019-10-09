@@ -78,7 +78,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>4.	Have you heard about Ebola virus disease?  </b></label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="five" name="five" onChange='displaySix(this.value);'>
+                            <select class="form-control" id="four" name="four" onChange='displayFive(this.value);'>
                                 <option>Select Answer</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -90,7 +90,7 @@
                     <div style="display: none;"  id="numberFive" class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>5.	If yes, from whom did you hear of Ebola? (Check all that apply)</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="fives" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherSix(this.value);'>
+                            <select multiple name="fives" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherFive(this.value);'>
                                 <option data-tokens="Health worker" value="Health worker">Health worker</option>
                                 <option data-tokens="Sensitization" value="Sensitization">Sensitization</option>
                                 <option data-tokens="Radio" value="Radio">Radio</option>
@@ -104,22 +104,32 @@
                         </div>
                     </div>
 
-                    <div style="display: none;"  id="numberSix" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>5.	If yes, from whom did you hear of Ebola? (Check all that apply)</b></label>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" ><b>6.	What is Ebola virus disease? (Check the best answer)</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="sixes" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherSix(this.value);'>
-                                <option data-tokens="Health worker" value="Health worker">Health worker</option>
-                                <option data-tokens="Sensitization" value="Sensitization">Sensitization</option>
-                                <option data-tokens="Radio" value="Radio">Radio</option>
-                                <option data-tokens="Television" value="Television">Television</option>
-                                <option data-tokens="Internet" value="Internet">Internet</option>
-                                <option data-tokens="Print Media" value="Print Media">Print Media</option>
-                                <option data-tokens="Social Media" value="Social Media">Social Media</option>
+                            <select multiple name="sixes" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherSix(this.value);'>
+                                <option data-tokens="It is a severe and often deadly disease caused by Ebola virus" value="It is a severe and often deadly disease caused by Ebola virus">It is a severe and often deadly disease caused by Ebola virus</option>
+                                <option data-tokens="It is a severe disease caused by a protozoann" value="It is a severe disease caused by a protozoann">It is a severe disease caused by a protozoann</option>
+                                <option data-tokens="Disease only found among people eating monkeys in Congo and West Africa. " value="Disease only found among people eating monkeys in Congo and West Africa. ">Disease only found among people eating monkeys in Congo and West Africa. </option>
+                                <option data-tokens="Don’t know" value="Don’t know">Don’t know</option>
                                 <option data-tokens="Other" value="other">Other (Specify)</option>
                             </select>
                             <p></p><input id="six" type="text" name="six" class="form-control" style='display:none;'>
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" ><b>4.	Have you heard about Ebola virus disease?  </b></label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="four" name="four" onChange='displayFive(this.value);'>
+                                <option>Select Answer</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="Unknown">Don't Know</option>
+                            </select>                          
+                        </div>
+                    </div>
+
 
                    
                     <button type="submit" class="btn btn-primary"> Next </button>
@@ -132,15 +142,22 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/js/bootstrap-select.min.js"></script>
         <script type="text/javascript">
-            function checkOtherSix(val){
+            function checkOtherFive(val){
                 var element=document.getElementById('five');
                 if(val=='other')
                 element.style.display='block';
                 else  
                 element.style.display='none';
             }
+            function checkOtherSix(val){
+                var element=document.getElementById('six');
+                if(val=='other')
+                element.style.display='block';
+                else  
+                element.style.display='none';
+            }
 
-            function displaySix(val){
+            function displayFive(val){
                 var element=document.getElementById('numberFive');
                 if(val=='Yes')
                 element.style.display='block';
