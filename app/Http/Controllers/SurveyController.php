@@ -72,9 +72,120 @@ class SurveyController extends Controller
             $answer->save();
         }
 
-        return view('knowledge_one')->with('answer', $answer);
+        return view('knowledge_one')->with('answer', $answer);     
 
-     
+    }
+
+    public function addKnowledgeOne(Request $request){
+
+        if($request->five == ''){
+            $five = $request->fives;
+            $five = implode(',', $five);
+        }else{
+            $five = $request->five;
+        }
+
+        if($request->six == ''){
+            $six = $request->sixes;
+            $six = implode(',', $six);
+        }else{
+            $six = $request->six;
+        }
+        if($request->eight == ''){
+            $eight = $request->eights;
+            $eight = implode(',', $eight);
+        }else{
+            $eight = $request->eight;
+        }
+
+        if($request->ten == ''){
+            $ten = $request->tens;
+            $ten = implode(',', $ten);
+        }else{
+            $ten = $request->ten;
+        }
+
+        if($request->eleven == ''){
+            $eleven = $request->elevens;
+            $eleven = implode(',', $eleven);
+        }else{
+            $eleven = $request->eleven;
+        }
+
+        if($request->fifteen == ''){
+            $fifteen = $request->fifteens;
+            $fifteen = implode(',', $fifteen);
+        }else{
+            $fifteen = $request->fifteen;
+        }
+
+        if($request->seventeen == ''){
+            $seventeen = $request->seventeens;
+            $seventeen = implode(',', $seventeen);
+        }else{
+            $seventeen = $request->seventeen;
+        }
+        if($request->eighteen == ''){
+            $eighteen = $request->eighteens;
+            $eighteen = implode(',', $eighteen);
+        }else{
+            $eighteen = $request->eighteen;
+        }
+
+
+        for($i = 4; $i <= 18; $i++){
+            $answer = new Answer;
+            $answer->survey_id = $request->survey_id;
+            $answer->question_id = $i;
+            if($i == 4){
+                $answer->answers = $request->four;
+            }
+            if($i == 5){
+                $answer->answers = $five;
+            }
+            if($i == 6){
+                $answer->answers = $six;
+            }
+            if($i == 7){
+                $answer->answers = $request->seven;
+            }
+            if($i == 8){
+                $answer->answers = $eight;
+            }
+            if($i == 9){
+                $answer->answers = $request->nine;
+            }
+            if($i == 10){
+                $answer->answers = $ten;
+            }
+            if($i == 11){
+                $answer->answers = $eleven;
+            }
+            if($i == 12){
+                $answer->answers = $request->twelve;
+            }
+            if($i == 13){
+                $answer->answers = $request->thirteen;
+            }
+            if($i == 14){
+                $answer->answers = $request->fourteen;
+            }
+            if($i == 15){
+                $answer->answers = $fifteen;
+            }
+            if($i == 16){
+                $answer->answers = $request->sixteen;
+            }
+            if($i == 17){
+                $answer->answers = $seventeen;
+            }
+            if($i == 18){
+                $answer->answers = $eighteen;
+            }
+
+        }
+
+        return view('knowledge_two')->with('answer', $answer);     
 
     }
 }
