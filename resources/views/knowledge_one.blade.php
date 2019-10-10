@@ -215,7 +215,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>14. In your opinion, do you think animals can transmit Ebola? (If No, skip Q.15) </b></label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="nine" name="nine" onChange='displayFifteen(this.value);'>
+                            <select class="form-control" id="fourteen" name="fourteen" onChange='displayFifteen(this.value);'>
                                 <option>Select Answer</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>

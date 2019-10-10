@@ -183,6 +183,7 @@ class SurveyController extends Controller
                 $answer->answers = $eighteen;
             }
 
+            $answer->save();
         }
 
         return view('knowledge_two')->with('answer', $answer);     

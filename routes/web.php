@@ -22,6 +22,7 @@ Route::post('/add/survey', 'SurveyController@addSurvey')->name('addSurvey');
 Route::post('/add/demographics', 'SurveyController@addDemographics')->name('addDemographics');
 Route::get('/knowledge/attitude', 'SurveyController@demographicsPartThree')->name('moreDemographics');
 Route::post('/add/knowledge/one', 'SurveyController@addKnowledgeOne')->name('addKnowledgeOne');
+Route::post('/add/knowledge/two', 'SurveyController@addKnowledgeTwo')->name('addKnowledgeTwo');
 
 
 
