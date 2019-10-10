@@ -77,9 +77,4 @@ class SurveyController extends Controller
      
 
     }
-
-    public function demographicsPartThree(){
-
-        return view('knowledge_three');
-    }
 }
