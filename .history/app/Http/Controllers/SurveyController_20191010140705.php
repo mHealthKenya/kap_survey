@@ -184,7 +184,6 @@ class SurveyController extends Controller
             }
             $answer->save();
 
-            $answer->save();
         }
 
         return view('knowledge_two')->with('answer', $answer);     
@@ -260,6 +259,7 @@ class SurveyController extends Controller
             $answer->save();
 
         }
+        toastr()->success('');
         toastr("Thank you for taking part in this survey!");
         return redirect()->route('survey');
 

@@ -63,7 +63,6 @@
                 margin-bottom: 30px;
             }
         </style>
-        @toastr_css
     </head>
     <body>
         <div class='content col-md-12'>
@@ -72,9 +71,9 @@
           
             <div class="col-md-12" style="margin-top:20px;">
             <h2><b> Section C: Knowledge & Attitude Questions</b> </h2>
-                <form role="form" method="post" action="{{route('saveKnowledgeThree')}}" >
+                <form role="form" method="post" action="{{route('addKnowledgeThree')}}" >
                     {{ csrf_field() }}
-                    <input type="hidden" name="survey_id" class="form-control" value="1">
+                    <input type="hidden" name="survey_id" class="form-control" value="none">
                     {{-- <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}"> --}}
 
                     <div class="form-group row">
@@ -92,7 +91,7 @@
                     <div style="display: none;"  id="numberThirtyTwo" class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>33.	If yes, where? (Check all that apply)</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="thirtythrees[]" class=" selectpicker form-control" data-width="100%" data-live-search="true">
+                            <select multiple name="thirtythrees" class=" selectpicker form-control" data-width="100%" data-live-search="true">
                                 <option data-tokens="Uganda" value="Uganda">Uganda</option>
                                 <option data-tokens="Democratic Republic of Congo" value="Democratic Republic of Congo">Democratic Republic of Congo</option>
                                 <option data-tokens="South Sudan" value="South Sudan">South Sudan</option>
@@ -105,7 +104,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>34.	Where did you learn of the current outbreak? (Check all that apply)</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="thirtyfours[]" class="selectpicker form-control" data-width="100% data-live-search="true">
+                            <select multiple name="thirtyfours" class="selectpicker form-control" data-width="100% data-live-search="true">
                                 <option data-tokens="Radio" value="Radio">Radio</option>
                                 <option data-tokens="Television" value="Television">Television</option>
                                 <option data-tokens="MOH circular" value="MOH circular">MOH circular. </option>
@@ -120,7 +119,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>35.	In the last 6 months, have you come across any Ebola educational materials (Check all that apply)</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="thirtyfives[]" class="selectpicker form-control" data-width="100% data-live-search="true">
+                            <select multiple name="thirtyfives" class="selectpicker form-control" data-width="100% data-live-search="true">
                                 <option data-tokens="Banner" value="Banner">Banner</option>
                                 <option data-tokens="Posters" value="Posters">Posters</option>
                                 <option data-tokens="Factsheet" value="Factsheet">Factsheet. </option>
@@ -136,7 +135,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>36. Are you satisfied with current Ebola message dissemination?</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="thirtysixes[]" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherThirtySix(this.value);'>
+                            <select multiple name="thirtysixes" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherThirtySix(this.value);'>
                                 <option data-tokens="Very satisfied" value="Very satisfied">Very satisfied</option>
                                 <option data-tokens="Satisfied" value="Satisfied">Satisfied</option>
                                 <option data-tokens="Not Satisfied" value="Not Satisfied">Not Satisfied</option>
@@ -150,7 +149,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>37. What would you want to be done in creating awareness on Ebola? (Check all that apply)</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="thirtysevens[]" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherThirtySeven(this.value);'>
+                            <select multiple name="thirtysevens" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherThirtySeven(this.value);'>
                                 <option data-tokens="Conduct health worker sensitization" value="Conduct health worker sensitization">Conduct health worker sensitization</option>
                                 <option data-tokens="Provide Ebola IEC materials" value="Provide Ebola IEC materials">Provide Ebola IEC materials</option>
                                 <option data-tokens="Airing Radio messages" value="Airing Radio messages">Airing Radio messages</option>
@@ -165,7 +164,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>38. In this community do you think there are some behaviours that may put them at risk of Ebola? (Check all that apply)</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="thirtyeights[]" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherThirtyEight(this.value);'>
+                            <select multiple name="thirtyeights" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherThirtyEight(this.value);'>
                                 <option data-tokens="Residents like traditional medication" value="Residents like traditional medication">Residents like traditional medication</option>
                                 <option data-tokens="Residents like wild animals like monkeys, antelopes" value="Residents like wild animals like monkeys, antelopes">Residents like wild animals like monkeys, antelopes</option>
                                 <option data-tokens="Presence of refugees" value="Presence of refugees">Presence of refugees</option>
@@ -193,14 +192,14 @@
                     <div style="display: none;"  id="numberForty" class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>40.	If No, why?</b></label>
                         <div class="col-sm-10">
-                                <input type="text" class="form-control" name="forty" placeholder="Please provide reason" /><br /><br />
+                                <input type="text" class="form-control" name="title" placeholder="Please provide reason" /><br /><br />
                         </div>
                     </div>
 
                     <div class="form-group row">
                             <label class="col-sm-2 col-form-label" ><b>41.	In this community, what are the main sources of passing health messages? (Check all that apply)</b></label>
                             <div class="col-sm-10">
-                                <select multiple name="fortyones[]" class="selectpicker form-control" data-width="100% data-live-search="true">
+                                <select multiple name="fortyones" class="selectpicker form-control" data-width="100% data-live-search="true">
                                     <option data-tokens="Banner" value="Banner">Banner</option>
                                     <option data-tokens="Posters" value="Posters">Posters</option>
                                     <option data-tokens="Factsheet" value="Factsheet">Factsheet. </option>
@@ -216,7 +215,7 @@
 
 
                    
-                        <input type="submit" name="submit" class="btn btn-primary" value="Submit Survey" />
+                    <button type="submit" class="btn btn-primary"> Next </button>
                 </form>
             </div>
         </div>
@@ -275,6 +274,5 @@
 
         </script> 
     </footer>
-    @toastr_js
-    @toastr_render
 </html>
+k
