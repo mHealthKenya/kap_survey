@@ -159,7 +159,7 @@
                     </div>
 
                     <div style="display:none;" id="numberTen" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>10. If yes which ones are this? (Check all that apply) </b></label>
+                        <label class="col-sm-2 col-form-label" ><b>9. If yes which ones are this? (Check all that apply) </b></label>
                         <div class="col-sm-10">
                             <select multiple class="selectpicker form-control" id="tens" name="tens[]" >
                                 <option value="Bleeding">Bleeding</option>
@@ -176,7 +176,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>11. In your opinion, when would you suspect Ebola in a patient? (Check the best answer)</b></label>
                         <div class="col-sm-10">
-                            <select  name="elevens[]" class=" selectpicker form-control" data-width="100%" onchange='checkOtherEleven(this.value);'>
+                            <select  name="elevens" class=" selectpicker form-control" data-width="100%" onchange='checkOtherEleven(this.value);'>
                                 <option value="History of travel to an area known to have cases of Ebola">History of travel to an area known to have cases of Ebola</option>
                                 <option  value="History of contact with living or dead person suspected to have Ebola">History of contact with living or dead person suspected to have Ebola</option>
                                 <option  value="Clinical Presentations">Clinical Presentations</option>
@@ -225,7 +225,7 @@
                     </div>
 
                     <div style="display:none;" id="numberFifteen" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>15. If yes, through which animals? (Check all that apply)</b></label>
+                        <label class="col-sm-2 col-form-label" ><b>If yes, through which animals? (Check all that apply)</b></label>
                         <div class="col-sm-10">
                             <select multiple name="fifteens[]" class=" selectpicker form-control" data-width="100%" onchange='checkOtherFifteen(this.value);'>
                                 <option value="Goats">Goats</option>
