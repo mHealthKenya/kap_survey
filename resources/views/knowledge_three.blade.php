@@ -74,7 +74,7 @@
             <h2><b> Section C: Knowledge & Attitude Questions</b> </h2>
                 <form role="form" method="post" action="{{route('saveKnowledgeThree')}}" >
                     {{ csrf_field() }}
-                    <input type="hidden" name="survey_id" class="form-control" value="1">
+                    <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}">
                     {{-- <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}"> --}}
 
                     <div class="form-group row">

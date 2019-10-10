@@ -183,17 +183,88 @@ class SurveyController extends Controller
                 $answer->answers = $eighteen;
             }
             $answer->save();
-
-            $answer->save();
         }
 
         return view('knowledge_two')->with('answer', $answer);     
 
     }
-    public function knowledgeThree(){
-        return view('knowledge_three');
-    }
 
+    public function addKnowledgeTwo(Request $request){
+        if($request->twenty == ''){
+            $twenty = $request->twentys;
+            $twenty = implode(',', $twenty);
+        }else{
+            $twenty = $request->twenty;
+        }
+        if($request->twentyone == ''){
+            $twentyone = $request->twentyones;
+        }else{
+            $twentyone = $request->twentyone;
+        }
+        if($request->twentyfour == ''){
+            $twentyfour = $request->twentyfours;
+        }else{
+            $twentyfour = $request->twentyfour;
+        }
+        if($request->twentyfive == ''){
+            $twentyfive = $request->twentyfives;
+        }else{
+            $twentyfive = $request->twentyfive;
+        }
+
+        for($i = 19; $i <= 31; $i++){
+            $answer = new Answer;
+            $answer->survey_id = $request->survey_id;
+            $answer->question_id = $i;
+
+            if($i == 19){
+                $answer->answers = $request->nineteen;
+            }
+            if($i == 20){
+                $answer->answers = $twenty;
+            }
+            if($i == 21){
+                $answer->answers = $twentyone;
+            }
+            if($i == 22){
+                $answer->answers = $request->twentytwo;
+            }
+            if($i == 23){
+                $answer->answers = $request->twentythree;
+            }
+            if($i == 24){
+                $answer->answers = $twentyfour;
+            }
+            if($i == 25){
+                $answer->answers = $twentyfive;
+            }
+            if($i == 26){
+                $answer->answers = $request->twentysix;
+            }
+            if($i == 27){
+                $answer->answers = $request->twentyseven;
+            }
+            if($i == 28){
+                $answer->answers = $request->twentyeight;
+            }
+            if($i == 29){
+                $answer->answers = $request->twentynine;
+            }
+            if($i == 30){
+                $answer->answers = $request->thirty;
+            }
+            if($i == 31){
+                $answer->answers = $request->thirtyone;
+            }
+
+            $answer->save();
+        }
+
+        return view('knowledge_three')->with('answer', $answer);     
+
+
+    }
+ 
     public function demographicsPartThree(Request $request){
 
 
