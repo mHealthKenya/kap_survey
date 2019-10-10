@@ -63,7 +63,6 @@
                 margin-bottom: 30px;
             }
         </style>
-        @toastr_css
     </head>
     <body>
         <div class='content col-md-12'>
@@ -74,7 +73,7 @@
             <h2><b> Section C: Knowledge & Attitude Questions</b> </h2>
                 <form role="form" method="post" action="{{route('saveKnowledgeThree')}}" >
                     {{ csrf_field() }}
-                    <input type="hidden" name="survey_id" class="form-control" value="1">
+                    <input type="hidden" name="survey_id" class="form-control" value="none">
                     {{-- <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}"> --}}
 
                     <div class="form-group row">
@@ -193,7 +192,7 @@
                     <div style="display: none;"  id="numberForty" class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>40.	If No, why?</b></label>
                         <div class="col-sm-10">
-                                <input type="text" class="form-control" name="forty" placeholder="Please provide reason" /><br /><br />
+                                <input type="text" class="form-control" name="title" placeholder="Please provide reason" /><br /><br />
                         </div>
                     </div>
 
@@ -275,6 +274,5 @@
 
         </script> 
     </footer>
-    @toastr_js
-    @toastr_render
 </html>
+k

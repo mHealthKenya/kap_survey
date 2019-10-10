@@ -22,10 +22,6 @@ Route::post('/add/survey', 'SurveyController@addSurvey')->name('addSurvey');
 Route::post('/add/demographics', 'SurveyController@addDemographics')->name('addDemographics');
 Route::post('/add/knowledge/three', 'SurveyController@demographicsPartThree')->name('addKnowledgeThree');
 Route::post('/add/knowledge/one', 'SurveyController@addKnowledgeOne')->name('addKnowledgeOne');
-//VIEW KNOWLEDGE THREE RETURNED
-Route::get('/knowledge/three', 'SurveyController@knowledgeThree')->name('addKnowledgeThree');
-Route::post('/add/three', 'SurveyController@demographicsPartThree')->name('saveKnowledgeThree');
-
 
 
 

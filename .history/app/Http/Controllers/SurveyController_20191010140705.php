@@ -259,6 +259,7 @@ class SurveyController extends Controller
             $answer->save();
 
         }
+        toastr()->success('');
         toastr("Thank you for taking part in this survey!");
         return redirect()->route('survey');
 

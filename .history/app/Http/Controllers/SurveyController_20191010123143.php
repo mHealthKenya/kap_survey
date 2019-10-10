@@ -189,11 +189,8 @@ class SurveyController extends Controller
         return view('knowledge_two')->with('answer', $answer);     
 
     }
-    public function knowledgeThree(){
-        return view('knowledge_three');
-    }
 
-    public function demographicsPartThree(Request $request){
+    public function demographicsPartThree(){
 
 
         if($request->thirtysix == ''){
@@ -217,51 +214,10 @@ class SurveyController extends Controller
             $thirtyeight = $request->thirtyeight;
         }
 
-        for($i = 32; $i <= 41; $i++){
-            $answer = new Answer;
-            $answer->survey_id = $request->survey_id;
-            $answer->question_id = $i;
-            if($i == 32){
-                $answer->answers = $request->thirtytwo;
-            }
-            if($i == 33){
-                $thirtythrees = implode(', ', $request->thirtythrees);
-                $answer->answers = $thirtythrees;
-            }
-            if($i == 34){
-                $thirtyfours = implode(', ', $request->thirtyfours);
-                $answer->answers = $thirtyfours;
-            }
-            if($i == 35){
-                $thirtyfives = implode(', ', $request->thirtyfives);
-                $answer->answers = $thirtyfives;
-            }
-            if($i == 36){
-                $answer->answers = $thirtysix;
-            }
-            if($i == 37){
-                $answer->answers = $thirtyseven;
-            }
-            if($i == 38){
-                $answer->answers = $thirtyeight;
-            }
-            if($i == 39){
-                $answer->answers = $request->thirtynine;
-            }
-            if($i == 40){
-                $answer->answers = $request->forty;
-            }
-            if($i == 41){
-                $fortyones = implode(', ', $request->fortyones);
-                $answer->answers = $fortyones;
-            }
 
-            $answer->save();
+        $answer = new Answer;
 
-        }
-        toastr("Thank you for taking part in this survey!");
-        return redirect()->route('survey');
 
-        // return view('knowledge_three')->with('answer' , $answer);
+        return view('knowledge_three');
     }
 }

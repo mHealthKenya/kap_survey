@@ -249,18 +249,14 @@ class SurveyController extends Controller
                 $answer->answers = $request->thirtynine;
             }
             if($i == 40){
-                $answer->answers = $request->forty;
-            }
-            if($i == 41){
-                $fortyones = implode(', ', $request->fortyones);
-                $answer->answers = $fortyones;
+                $answer->answers = $request->title;
             }
 
             $answer->save();
 
         }
-        toastr("Thank you for taking part in this survey!");
-        return redirect()->route('survey');
+        
+        echo "saved Success!!";
 
         // return view('knowledge_three')->with('answer' , $answer);
     }

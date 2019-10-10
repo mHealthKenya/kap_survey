@@ -225,16 +225,13 @@ class SurveyController extends Controller
                 $answer->answers = $request->thirtytwo;
             }
             if($i == 33){
-                $thirtythrees = implode(', ', $request->thirtythrees);
-                $answer->answers = $thirtythrees;
+                $answer->answers = $request->thirtythrees;
             }
             if($i == 34){
-                $thirtyfours = implode(', ', $request->thirtyfours);
-                $answer->answers = $thirtyfours;
+                $answer->answers = $request->thirtyfours;
             }
             if($i == 35){
-                $thirtyfives = implode(', ', $request->thirtyfives);
-                $answer->answers = $thirtyfives;
+                $answer->answers = $request->thirtyfives;
             }
             if($i == 36){
                 $answer->answers = $thirtysix;
@@ -245,23 +242,13 @@ class SurveyController extends Controller
             if($i == 38){
                 $answer->answers = $thirtyeight;
             }
-            if($i == 39){
-                $answer->answers = $request->thirtynine;
-            }
-            if($i == 40){
-                $answer->answers = $request->forty;
-            }
-            if($i == 41){
-                $fortyones = implode(', ', $request->fortyones);
-                $answer->answers = $fortyones;
-            }
 
             $answer->save();
 
         }
-        toastr("Thank you for taking part in this survey!");
-        return redirect()->route('survey');
+        
 
-        // return view('knowledge_three')->with('answer' , $answer);
+
+        return view('knowledge_three')->with('answer' , $answer);
     }
 }

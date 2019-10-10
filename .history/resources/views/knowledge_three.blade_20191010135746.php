@@ -63,7 +63,6 @@
                 margin-bottom: 30px;
             }
         </style>
-        @toastr_css
     </head>
     <body>
         <div class='content col-md-12'>

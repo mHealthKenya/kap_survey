@@ -24,8 +24,6 @@ Route::post('/add/knowledge/three', 'SurveyController@demographicsPartThree')->n
 Route::post('/add/knowledge/one', 'SurveyController@addKnowledgeOne')->name('addKnowledgeOne');
 //VIEW KNOWLEDGE THREE RETURNED
 Route::get('/knowledge/three', 'SurveyController@knowledgeThree')->name('addKnowledgeThree');
-Route::post('/add/three', 'SurveyController@demographicsPartThree')->name('saveKnowledgeThree');
-
 
 
 

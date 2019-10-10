@@ -259,7 +259,7 @@ class SurveyController extends Controller
             $answer->save();
 
         }
-        toastr("Thank you for taking part in this survey!");
+        
         return redirect()->route('survey');
 
         // return view('knowledge_three')->with('answer' , $answer);
