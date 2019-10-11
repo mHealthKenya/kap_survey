@@ -80,54 +80,86 @@ class SurveyController extends Controller
 
         if($request->five == ''){
             $five = $request->fives;
-            $five = implode(',', $five);
+            if(!empty($five)){
+                $five = implode(',', $five);
+            }else{
+                $five = '';
+            }
         }else{
             $five = $request->five;
         }
 
         if($request->six == ''){
             $six = $request->sixes;
-            $six = implode(',', $six);
+            if(!empty($six)){
+                $six = implode(',', $six);
+            }else{
+                $six = '';
+            }
         }else{
             $six = $request->six;
         }
         if($request->eight == ''){
             $eight = $request->eights;
-            $eight = implode(',', $eight);
+            if(!empty($eight)){
+                $eight = implode(',', $eight);
+            }else{
+                $eight = '';
+            }
         }else{
             $eight = $request->eight;
         }
 
         if($request->ten == ''){
             $ten = $request->tens;
-            $ten = implode(',', $ten);
+            if(!empty($ten)){
+                $ten = implode(',', $ten);
+            }else{
+                $ten = '';
+            }
         }else{
             $ten = $request->ten;
         }
 
         if($request->eleven == ''){
             $eleven = $request->elevens;
-            $eleven = implode(',', $eleven);
+            if(!empty($eleven)){
+                $eleven = implode(',', $eleven);
+            }else{
+                $eleven = '';
+            }
         }else{
             $eleven = $request->eleven;
         }
 
         if($request->fifteen == ''){
             $fifteen = $request->fifteens;
-            $fifteen = implode(',', $fifteen);
+            if(!empty($fifteen)){
+                $fifteen = implode(',', $fifteen);
+            }else{
+                $fifteen = '';
+            }
         }else{
             $fifteen = $request->fifteen;
         }
 
         if($request->seventeen == ''){
             $seventeen = $request->seventeens;
-            $seventeen = implode(',', $seventeen);
+            if(!empty($seventeen)){
+                $seventeen = implode(',', $seventeen);
+            }else{
+                $seventeen = '';
+            }
         }else{
             $seventeen = $request->seventeen;
         }
         if($request->eighteen == ''){
             $eighteen = $request->eighteens;
-            $eighteen = implode(',', $eighteen);
+            if(!empty($eighteen)){
+                $eighteen = implode(',', $eighteen);
+            }else{
+                $eighteen = '';
+            }        
         }else{
             $eighteen = $request->eighteen;
         }
