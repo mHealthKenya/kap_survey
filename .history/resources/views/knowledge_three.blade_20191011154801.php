@@ -268,7 +268,7 @@
 
             function displayForty(val){
                 var element=document.getElementById('numberForty');
-                if(val=='Yes')
+                if(val=='No')
                 element.style.display='block';
                 else  
                 element.style.display='none';

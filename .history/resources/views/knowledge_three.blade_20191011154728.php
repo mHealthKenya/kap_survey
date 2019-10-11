@@ -192,7 +192,7 @@
                     </div>
 
                     <div style="display: none;"  id="numberForty" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>40.	If Yes, which ones are these misconceptions?</b></label>
+                        <label class="col-sm-2 col-form-label" ><b>40.	If No, why?</b></label>
                         <div class="col-sm-10">
                                 <input type="text" class="form-control" name="forty" placeholder="Please provide reason" /><br /><br />
                         </div>
@@ -268,7 +268,7 @@
 
             function displayForty(val){
                 var element=document.getElementById('numberForty');
-                if(val=='Yes')
+                if(val=='No')
                 element.style.display='block';
                 else  
                 element.style.display='none';

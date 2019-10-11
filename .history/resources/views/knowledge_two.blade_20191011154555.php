@@ -124,7 +124,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>22. Have you had any Ebola training or sensitization? (If No, skip Q.23&24, check all that apply)</b></label>
+                        <label class="col-sm-2 col-form-label" ><b>22. Have you had any Ebola training or sensitization? (If No, skip Q.23&24)</b></label>
                         <div class="col-sm-10">
                             <select class="form-control" id="twentytwo" name="twentytwo" onChange='displayTwentythree(this.value);'>
                                 <option>Select Answer</option>
