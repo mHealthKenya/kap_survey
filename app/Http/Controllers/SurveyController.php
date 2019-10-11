@@ -232,6 +232,7 @@ class SurveyController extends Controller
         }else{
             $twenty = $request->twenty;
         }
+        
         if($request->twentyone == ''){
             $twentyone = $request->twentyones;
         }else{
@@ -244,6 +245,11 @@ class SurveyController extends Controller
         }
         if($request->twentyfive == ''){
             $twentyfive = $request->twentyfives;
+            if(!empty($twentyfive)){
+                $twentyfive = implode(',', $twentyfive);
+            }else{
+                $twentyfive = '';
+            } 
         }else{
             $twentyfive = $request->twentyfive;
         }

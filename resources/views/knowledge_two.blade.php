@@ -169,7 +169,7 @@
                     <div class="form-group row">
                             <label class="col-sm-2 col-form-label" ><b>25. If No, which topics would you wish to be trained on?</b></label>
                             <div class="col-sm-10">
-                                <select  name="twentyfives" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyfive(this.value);'>
+                                <select multiple name="twentyfives[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyfive(this.value);'>
                                     <option value="Surveillance ">Surveillance</option>
                                     <option value="case management">case management</option>
                                     <option value="infection prevention and control">infection prevention and control</option>
