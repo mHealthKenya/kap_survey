@@ -167,7 +167,7 @@
                     </div>
 
                     <div class="form-group row">
-                            <label class="col-sm-2 col-form-label" ><b>25. If No, which topics would you wish to be trained on?</b></label>
+                            <label class="col-sm-2 col-form-label" ><b>25. If No, which topics would you wish to be trained on?(check all that apply)</b></label>
                             <div class="col-sm-10">
                                 <select multiple name="twentyfives[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyfive(this.value);'>
                                     <option value="Surveillance ">Surveillance</option>
