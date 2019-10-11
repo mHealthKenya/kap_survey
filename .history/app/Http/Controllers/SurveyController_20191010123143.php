@@ -80,86 +80,54 @@ class SurveyController extends Controller
 
         if($request->five == ''){
             $five = $request->fives;
-            if(!empty($five)){
-                $five = implode(',', $five);
-            }else{
-                $five = '';
-            }
+            $five = implode(',', $five);
         }else{
             $five = $request->five;
         }
 
         if($request->six == ''){
             $six = $request->sixes;
-            if(!empty($six)){
-                $six = implode(',', $six);
-            }else{
-                $six = '';
-            }
+            $six = implode(',', $six);
         }else{
             $six = $request->six;
         }
         if($request->eight == ''){
             $eight = $request->eights;
-            if(!empty($eight)){
-                $eight = implode(',', $eight);
-            }else{
-                $eight = '';
-            }
+            $eight = implode(',', $eight);
         }else{
             $eight = $request->eight;
         }
 
         if($request->ten == ''){
             $ten = $request->tens;
-            if(!empty($ten)){
-                $ten = implode(',', $ten);
-            }else{
-                $ten = '';
-            }
+            $ten = implode(',', $ten);
         }else{
             $ten = $request->ten;
         }
 
         if($request->eleven == ''){
             $eleven = $request->elevens;
-            if(!empty($eleven)){
-                $eleven = implode(',', $eleven);
-            }else{
-                $eleven = '';
-            }
+            $eleven = implode(',', $eleven);
         }else{
             $eleven = $request->eleven;
         }
 
         if($request->fifteen == ''){
             $fifteen = $request->fifteens;
-            if(!empty($fifteen)){
-                $fifteen = implode(',', $fifteen);
-            }else{
-                $fifteen = '';
-            }
+            $fifteen = implode(',', $fifteen);
         }else{
             $fifteen = $request->fifteen;
         }
 
         if($request->seventeen == ''){
             $seventeen = $request->seventeens;
-            if(!empty($seventeen)){
-                $seventeen = implode(',', $seventeen);
-            }else{
-                $seventeen = '';
-            }
+            $seventeen = implode(',', $seventeen);
         }else{
             $seventeen = $request->seventeen;
         }
         if($request->eighteen == ''){
             $eighteen = $request->eighteens;
-            if(!empty($eighteen)){
-                $eighteen = implode(',', $eighteen);
-            }else{
-                $eighteen = '';
-            }        
+            $eighteen = implode(',', $eighteen);
         }else{
             $eighteen = $request->eighteen;
         }
@@ -215,89 +183,14 @@ class SurveyController extends Controller
                 $answer->answers = $eighteen;
             }
             $answer->save();
+
         }
 
         return view('knowledge_two')->with('answer', $answer);     
 
     }
 
-    public function addKnowledgeTwo(Request $request){
-        if($request->twenty == ''){
-            $twenty = $request->twentys;
-            $twenty = implode(',', $twenty);
-        }else{
-            $twenty = $request->twenty;
-        }
-        if($request->twentyone == ''){
-            $twentyone = $request->twentyones;
-        }else{
-            $twentyone = $request->twentyone;
-        }
-        if($request->twentyfour == ''){
-            $twentyfour = $request->twentyfours;
-        }else{
-            $twentyfour = $request->twentyfour;
-        }
-        if($request->twentyfive == ''){
-            $twentyfive = $request->twentyfives;
-        }else{
-            $twentyfive = $request->twentyfive;
-        }
-
-        for($i = 19; $i <= 31; $i++){
-            $answer = new Answer;
-            $answer->survey_id = $request->survey_id;
-            $answer->question_id = $i;
-
-            if($i == 19){
-                $answer->answers = $request->nineteen;
-            }
-            if($i == 20){
-                $answer->answers = $twenty;
-            }
-            if($i == 21){
-                $answer->answers = $twentyone;
-            }
-            if($i == 22){
-                $answer->answers = $request->twentytwo;
-            }
-            if($i == 23){
-                $answer->answers = $request->twentythree;
-            }
-            if($i == 24){
-                $answer->answers = $twentyfour;
-            }
-            if($i == 25){
-                $answer->answers = $twentyfive;
-            }
-            if($i == 26){
-                $answer->answers = $request->twentysix;
-            }
-            if($i == 27){
-                $answer->answers = $request->twentyseven;
-            }
-            if($i == 28){
-                $answer->answers = $request->twentyeight;
-            }
-            if($i == 29){
-                $answer->answers = $request->twentynine;
-            }
-            if($i == 30){
-                $answer->answers = $request->thirty;
-            }
-            if($i == 31){
-                $answer->answers = $request->thirtyone;
-            }
-
-            $answer->save();
-        }
-
-        return view('knowledge_three')->with('answer', $answer);     
-
-
-    }
- 
-    public function demographicsPartThree(Request $request){
+    public function demographicsPartThree(){
 
 
         if($request->thirtysix == ''){
@@ -321,51 +214,10 @@ class SurveyController extends Controller
             $thirtyeight = $request->thirtyeight;
         }
 
-        for($i = 32; $i <= 41; $i++){
-            $answer = new Answer;
-            $answer->survey_id = $request->survey_id;
-            $answer->question_id = $i;
-            if($i == 32){
-                $answer->answers = $request->thirtytwo;
-            }
-            if($i == 33){
-                $thirtythrees = implode(', ', $request->thirtythrees);
-                $answer->answers = $thirtythrees;
-            }
-            if($i == 34){
-                $thirtyfours = implode(', ', $request->thirtyfours);
-                $answer->answers = $thirtyfours;
-            }
-            if($i == 35){
-                $thirtyfives = implode(', ', $request->thirtyfives);
-                $answer->answers = $thirtyfives;
-            }
-            if($i == 36){
-                $answer->answers = $thirtysix;
-            }
-            if($i == 37){
-                $answer->answers = $thirtyseven;
-            }
-            if($i == 38){
-                $answer->answers = $thirtyeight;
-            }
-            if($i == 39){
-                $answer->answers = $request->thirtynine;
-            }
-            if($i == 40){
-                $answer->answers = $request->forty;
-            }
-            if($i == 41){
-                $fortyones = implode(', ', $request->fortyones);
-                $answer->answers = $fortyones;
-            }
 
-            $answer->save();
+        $answer = new Answer;
 
-        }
-        toastr("Thank you for taking part in this survey!");
-        return redirect()->route('survey');
 
-        // return view('knowledge_three')->with('answer' , $answer);
+        return view('knowledge_three');
     }
 }
