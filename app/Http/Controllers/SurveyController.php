@@ -345,15 +345,32 @@ class SurveyController extends Controller
                 $answer->answers = $request->thirtytwo;
             }
             if($i == 33){
-                $thirtythrees = implode(', ', $request->thirtythrees);
+                $thirtythrees = $request->thirtythrees;
+
+                if(!empty($thirtythrees)){
+                    $thirtythrees = implode(', ', $thirtythrees);
+                } else{
+                    $thirtythrees = '';
+                }
                 $answer->answers = $thirtythrees;
             }
             if($i == 34){
-                $thirtyfours = implode(', ', $request->thirtyfours);
+                $thirtyfours = $request->thirtyfours;
+
+                if(!empty($thirtyfours)){
+                    $thirtyfours = implode(', ', $thirtyfours);
+                } else{
+                    $thirtyfours = '';
+                }
                 $answer->answers = $thirtyfours;
             }
             if($i == 35){
-                $thirtyfives = implode(', ', $request->thirtyfives);
+                $thirtyfives = $request->thirtyfives;
+                if(!empty($thirtyfives)){
+                    $thirtyfives = implode(', ', $thirtyfives);
+                } else{
+                    $thirtyfives = '';
+                }
                 $answer->answers = $thirtyfives;
             }
             if($i == 36){
@@ -372,7 +389,12 @@ class SurveyController extends Controller
                 $answer->answers = $request->forty;
             }
             if($i == 41){
-                $fortyones = implode(', ', $request->fortyones);
+                $fortyones = $request->fortyones;
+                if(!empty($fortyones)){
+                    $fortyones = implode(', ', $fortyones);
+                } else{
+                    $fortyones = '';
+                }
                 $answer->answers = $fortyones;
             }
 

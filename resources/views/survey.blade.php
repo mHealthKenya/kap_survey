@@ -172,6 +172,6 @@
 
         </script>
         @toastr_js
-    @toastr_render
+        @toastr_render
     </footer>
 </html>
