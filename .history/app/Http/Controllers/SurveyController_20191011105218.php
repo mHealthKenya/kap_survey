@@ -80,86 +80,54 @@ class SurveyController extends Controller
 
         if($request->five == ''){
             $five = $request->fives;
-            if(!empty($five)){
-                $five = implode(',', $five);
-            }else{
-                $five = '';
-            }
+            $five = implode(',', $five);
         }else{
             $five = $request->five;
         }
 
         if($request->six == ''){
             $six = $request->sixes;
-            if(!empty($six)){
-                $six = implode(',', $six);
-            }else{
-                $six = '';
-            }
+            $six = implode(',', $six);
         }else{
             $six = $request->six;
         }
         if($request->eight == ''){
             $eight = $request->eights;
-            if(!empty($eight)){
-                $eight = implode(',', $eight);
-            }else{
-                $eight = '';
-            }
+            $eight = implode(',', $eight);
         }else{
             $eight = $request->eight;
         }
 
         if($request->ten == ''){
             $ten = $request->tens;
-            if(!empty($ten)){
-                $ten = implode(',', $ten);
-            }else{
-                $ten = '';
-            }
+            $ten = implode(',', $ten);
         }else{
             $ten = $request->ten;
         }
 
         if($request->eleven == ''){
             $eleven = $request->elevens;
-            if(!empty($eleven)){
-                $eleven = implode(',', $eleven);
-            }else{
-                $eleven = '';
-            }
+            $eleven = implode(',', $eleven);
         }else{
             $eleven = $request->eleven;
         }
 
         if($request->fifteen == ''){
             $fifteen = $request->fifteens;
-            if(!empty($fifteen)){
-                $fifteen = implode(',', $fifteen);
-            }else{
-                $fifteen = '';
-            }
+            $fifteen = implode(',', $fifteen);
         }else{
             $fifteen = $request->fifteen;
         }
 
         if($request->seventeen == ''){
             $seventeen = $request->seventeens;
-            if(!empty($seventeen)){
-                $seventeen = implode(',', $seventeen);
-            }else{
-                $seventeen = '';
-            }
+            $seventeen = implode(',', $seventeen);
         }else{
             $seventeen = $request->seventeen;
         }
         if($request->eighteen == ''){
             $eighteen = $request->eighteens;
-            if(!empty($eighteen)){
-                $eighteen = implode(',', $eighteen);
-            }else{
-                $eighteen = '';
-            }        
+            $eighteen = implode(',', $eighteen);
         }else{
             $eighteen = $request->eighteen;
         }
@@ -224,11 +192,7 @@ class SurveyController extends Controller
     public function addKnowledgeTwo(Request $request){
         if($request->twenty == ''){
             $twenty = $request->twentys;
-            if(!empty($twenty)){
-                $twenty = implode(',', $twenty);
-            }else{
-                $twenty = '';
-            } 
+            $twenty = implode(',', $twenty);
         }else{
             $twenty = $request->twenty;
         }
@@ -317,22 +281,14 @@ class SurveyController extends Controller
 
         if($request->thirtyseven == ''){
             $thirtyseven = $request->thirtysevens;
-            if(!empty($thirtyseven)){
-                $thirtyseven = implode(', ', $thirtyseven);
-            } else{
-                $thirtyseven = '';
-            }
+            $thirtyseven = implode(', ', $thirtyseven);
         }else{
             $thirtyseven = $request->thirtyseven;
         }
 
         if($request->thirtyeight == ''){
             $thirtyeight = $request->thirtyeights;
-            if(!empty($thirtyeight)){
-                $thirtyeight = implode(', ', $thirtyeight);
-            } else{
-                $thirtyeight = '';
-            }
+            $thirtyeight = implode(', ', $thirtyeight);
         }else{
             $thirtyeight = $request->thirtyeight;
         }
