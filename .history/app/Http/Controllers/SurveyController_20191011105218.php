@@ -281,22 +281,14 @@ class SurveyController extends Controller
 
         if($request->thirtyseven == ''){
             $thirtyseven = $request->thirtysevens;
-            if(!empty($thirtyseven)){
-                $thirtyseven = implode(', ', $thirtyseven);
-            } else{
-                $thirtyseven = '';
-            }
+            $thirtyseven = implode(', ', $thirtyseven);
         }else{
             $thirtyseven = $request->thirtyseven;
         }
 
         if($request->thirtyeight == ''){
             $thirtyeight = $request->thirtyeights;
-            if(!empty($thirtyeight)){
-                $thirtyeight = implode(', ', $thirtyeight);
-            } else{
-                $thirtyeight = '';
-            }
+            $thirtyeight = implode(', ', $thirtyeight);
         }else{
             $thirtyeight = $request->thirtyeight;
         }
