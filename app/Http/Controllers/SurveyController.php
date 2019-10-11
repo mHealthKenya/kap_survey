@@ -224,7 +224,11 @@ class SurveyController extends Controller
     public function addKnowledgeTwo(Request $request){
         if($request->twenty == ''){
             $twenty = $request->twentys;
-            $twenty = implode(',', $twenty);
+            if(!empty($twenty)){
+                $twenty = implode(',', $twenty);
+            }else{
+                $twenty = '';
+            } 
         }else{
             $twenty = $request->twenty;
         }
