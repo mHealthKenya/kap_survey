@@ -78,7 +78,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>1. Age in years: </b></label>
                         <div class="col-sm-10">
-                            <input type="number" name="age" class="form-control" id="age">
+                            <input min='18' type="number" name="age" class="form-control" id="age">
                           </div>
                     </div>
                     <div class="form-group row">
