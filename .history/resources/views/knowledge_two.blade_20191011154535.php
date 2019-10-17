@@ -124,7 +124,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>22. Have you had any Ebola training or sensitization? (If No, skip Q.23&24, check all that apply)</b></label>
+                        <label class="col-sm-2 col-form-label" ><b>22. Have you had any Ebola training or sensitization? (If No, skip Q.23&24 to 25)</b></label>
                         <div class="col-sm-10">
                             <select class="form-control" id="twentytwo" name="twentytwo" onChange='displayTwentythree(this.value);'>
                                 <option>Select Answer</option>
@@ -150,7 +150,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label" ><b>24. Which topics would you like to be trained on? (Check the best answer)</b></label>
+                            <label class="col-sm-2 col-form-label" ><b>24. How do you think Ebola virus disease can best be healed or treated? (Check the best answer)</b></label>
                             <div class="col-sm-10">
                                 <select   name="twentyfours" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyfour(this.value);'>
                                     <option value="Surveillance ">Surveillance</option>
@@ -167,9 +167,9 @@
                     </div>
 
                     <div class="form-group row">
-                            <label class="col-sm-2 col-form-label" ><b>25. If No, which topics would you wish to be trained on?(check all that apply)</b></label>
+                            <label class="col-sm-2 col-form-label" ><b>25. If No, which topics would you wish to be trained on?</b></label>
                             <div class="col-sm-10">
-                                <select multiple name="twentyfives[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyfive(this.value);'>
+                                <select  name="twentyfives" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyfive(this.value);'>
                                     <option value="Surveillance ">Surveillance</option>
                                     <option value="case management">case management</option>
                                     <option value="infection prevention and control">infection prevention and control</option>

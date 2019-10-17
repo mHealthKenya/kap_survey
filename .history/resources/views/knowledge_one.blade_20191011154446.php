@@ -192,7 +192,7 @@
                         <label class="col-sm-2 col-form-label" ><b>12. How long does it take for one to show signs and symptoms from time of exposure? (Check the best answer)</b></label>
                         <div class="col-sm-10">
                             <select  name="twelve" class=" selectpicker form-control" data-width="100%">
-                                <option>Select Answer</option>
+                                    <option>Select Answer</option>
                                 <option value="Within 12 Hours">Within 12 Hours</option>
                                 <option  value="Between 24 to 48 Hours">Between 24 to 48 Hours</option>
                                 <option  value="Within 7 Days">Within 7 days</option>

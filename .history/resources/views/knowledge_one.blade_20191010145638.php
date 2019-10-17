@@ -177,7 +177,6 @@
                         <label class="col-sm-2 col-form-label" ><b>11. In your opinion, when would you suspect Ebola in a patient? (Check the best answer)</b></label>
                         <div class="col-sm-10">
                             <select  name="elevens[]" class=" selectpicker form-control" data-width="100%" onchange='checkOtherEleven(this.value);'>
-                                <option>Select Answer</option>
                                 <option value="History of travel to an area known to have cases of Ebola">History of travel to an area known to have cases of Ebola</option>
                                 <option  value="History of contact with living or dead person suspected to have Ebola">History of contact with living or dead person suspected to have Ebola</option>
                                 <option  value="Clinical Presentations">Clinical Presentations</option>
@@ -192,7 +191,6 @@
                         <label class="col-sm-2 col-form-label" ><b>12. How long does it take for one to show signs and symptoms from time of exposure? (Check the best answer)</b></label>
                         <div class="col-sm-10">
                             <select  name="twelve" class=" selectpicker form-control" data-width="100%">
-                                <option>Select Answer</option>
                                 <option value="Within 12 Hours">Within 12 Hours</option>
                                 <option  value="Between 24 to 48 Hours">Between 24 to 48 Hours</option>
                                 <option  value="Within 7 Days">Within 7 days</option>

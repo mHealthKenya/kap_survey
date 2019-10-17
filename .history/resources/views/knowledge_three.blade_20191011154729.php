@@ -170,7 +170,7 @@
                                 <option data-tokens="Residents like traditional medication" value="Residents like traditional medication">Residents like traditional medication</option>
                                 <option data-tokens="Residents like wild animals like monkeys, antelopes" value="Residents like wild animals like monkeys, antelopes">Residents like wild animals like monkeys, antelopes</option>
                                 <option data-tokens="Presence of refugees" value="Presence of refugees">Presence of refugees</option>
-                                <option data-tokens="Washing of dead body before burial" value="Washing of dead body before burial">Washing of dead body before burial</option>
+                                <option data-tokens="Working of dead body before burial" value="Working of dead body before burial">Working of dead body before burial</option>
                                 <option data-tokens="Sleeping with dead bodies before burial" value="Sleeping with dead bodies before burial">Sleeping with dead bodies before burial</option>
                                 <option data-tokens="None" value="None">None</option>
                                 <option data-tokens="Other" value="other">Other (Specify)</option>
@@ -192,7 +192,7 @@
                     </div>
 
                     <div style="display: none;"  id="numberForty" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>40.	If Yes, which ones are these misconceptions?</b></label>
+                        <label class="col-sm-2 col-form-label" ><b>40.	If No, why?</b></label>
                         <div class="col-sm-10">
                                 <input type="text" class="form-control" name="forty" placeholder="Please provide reason" /><br /><br />
                         </div>
@@ -268,7 +268,7 @@
 
             function displayForty(val){
                 var element=document.getElementById('numberForty');
-                if(val=='Yes')
+                if(val=='No')
                 element.style.display='block';
                 else  
                 element.style.display='none';
