@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/survey', 'SurveyController@index')->name('survey');
+Route::get('/survey/reports', 'SurveyController@reports')->name('reports');
+Route::get('/survey/reports/export', 'SurveyController@export')->name('export');
 Route::post('/get_subcounties', 'SurveyController@getSubCounties')->name('get_subcounties');
 Route::post('/get_facilities', 'SurveyController@getFacilities')->name('get_facilities');
 Route::post('/add/survey', 'SurveyController@addSurvey')->name('addSurvey');

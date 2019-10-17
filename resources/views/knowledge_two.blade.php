@@ -149,7 +149,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label" ><b>24. How do you think Ebola virus disease can best be healed or treated? (Check the best answer)</b></label>
+                            <label class="col-sm-2 col-form-label" ><b>24. Which topics would you like to be trained on? (Check the best answer)</b></label>
                             <div class="col-sm-10">
                                 <select   name="twentyfours" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyfour(this.value);'>
                                     <option value="Surveillance ">Surveillance</option>

@@ -93,7 +93,7 @@
                         <label class="col-sm-2 col-form-label" for="exampleInputEmail1"><b>Sub - County </b></label>
                         <div class="col-sm-10">
                             <select required id="sub_county" name="sub_county_id" class="form-control" data-width="100%">
-                                
+                            <option value='300'>Not Applicable</option>
                             </select>
                           </div>
                     </div>
@@ -101,7 +101,7 @@
                         <label class="col-sm-2 col-form-label" for="exampleInputEmail1"><b>Facility </b></label>
                         <div class="col-sm-10">
                             <select required id="facility" name="mfl_code" class=" selectpicker form-control" data-width="100%" data-live-search="true">
-                                
+                            <option data-token="Not Applicable" value='55555'>Not Applicable</option>
                             </select>
                           </div>
                     </div>
@@ -137,6 +137,9 @@
                             opt.textContent = data[i].name;
                             select.appendChild(opt);
                         }
+                        $('#sub_county').append("<option value='300'>Not Applicable</option>")
+
+
                     }
                 });
             });
@@ -166,6 +169,8 @@
                             $('#facility').selectpicker('refresh');
 
                         }
+                        $('#facility').append("<option data-token='Not Applicable' value='5555'>Not Applicable</option>");
+
                     }
                 });
             });

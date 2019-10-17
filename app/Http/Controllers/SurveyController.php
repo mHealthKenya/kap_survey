@@ -8,6 +8,10 @@ use App\SubCounty;
 use App\Facility;
 use App\Survey;
 use App\Answer;
+use App\Report;
+use App\Exports\SurveyExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class SurveyController extends Controller
 {
@@ -405,5 +409,25 @@ class SurveyController extends Controller
         return redirect()->route('survey');
 
         // return view('knowledge_three')->with('answer' , $answer);
+    }
+
+    public function reports(){
+
+     $reports = Report::select('survey_id','county', 'sub_county', 'facility','created_at')->groupBy('survey_id')->get();
+
+    foreach($reports as $report){
+        $answers = Report::select('questions', 'answers')->where('survey_id', $report->survey_id)->get();
+
+        $report['answers'] = $answers;
+
+    }
+        return view('reports')->with('reports',$reports);
+
+    }
+
+    public function export(){
+
+        return Excel::download(new SurveyExport, 'survey-report.xlsx');
+
     }
 }
