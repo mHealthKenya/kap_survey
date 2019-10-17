@@ -166,11 +166,11 @@
                             opt.textContent = data[i].name;
                             opt['data-tokens'] = data[i].name;
                             select.appendChild(opt);
-                            $('#facility').selectpicker('refresh');
+                            
 
                         }
                         $('#facility').append("<option data-token='Not Applicable' value='55555'>Not Applicable</option>");
-
+                        $('#facility').selectpicker('refresh');
                     }
                 });
             });
