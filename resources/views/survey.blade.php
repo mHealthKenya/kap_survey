@@ -169,7 +169,7 @@
                             $('#facility').selectpicker('refresh');
 
                         }
-                        $('#facility').append("<option data-token='Not Applicable' value='5555'>Not Applicable</option>");
+                        $('#facility').append("<option data-token='Not Applicable' value='55555'>Not Applicable</option>");
 
                     }
                 });
