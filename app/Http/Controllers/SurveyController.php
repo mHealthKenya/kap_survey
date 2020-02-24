@@ -9,8 +9,12 @@ use App\Facility;
 use App\Survey;
 use App\Answer;
 use App\Report;
+use App\HealthCareWorkers;
 use App\Exports\SurveyExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\API\SenderController;
+use Illuminate\Support\Facades\DB;
+ini_set('max_execution_time', 7200);
 
 
 class SurveyController extends Controller
@@ -419,14 +423,14 @@ class SurveyController extends Controller
 
     public function reports(){
 
-     $reports = Report::select('survey_id','county', 'sub_county', 'facility','created_at')->groupBy('survey_id')->get();
+      $reports = Report::select('survey_id','county', 'sub_county', 'facility','created_at')->groupBy('survey_id')->get();
 
-    foreach($reports as $report){
-        $answers = Report::select('questions', 'answers')->where('survey_id', $report->survey_id)->get();
+        foreach($reports as $report){
+            $answers = Report::select('questions', 'answers')->where('survey_id', $report->survey_id)->get();
 
-        $report['answers'] = $answers;
+            $report['answers'] = $answers;
 
-    }
+        }
         return view('reports')->with('reports',$reports);
 
     }
@@ -436,4 +440,35 @@ class SurveyController extends Controller
         return Excel::download(new SurveyExport, 'survey-report.xlsx');
 
     }
+
+    public function send_sms() {
+        //get healthcare workers contacts from c4c and send the link to take the survey
+        $hcws = HealthCareWorkers::select('f_name', 'l_name', 'mobile_no')->where('sent_status', 0)->get();
+        // echo json_encode($hcws);
+        // exit;
+        
+        foreach($hcws as $hcw){
+            $source = '40146';
+            $first_name = $hcw->f_name;
+            $last_name = $hcw->l_name;
+            $destination = $hcw->mobile_no;
+            // $destination = '+254721990078';
+            $msg = "Hello " . $first_name . ", the National Ministry of Health is conducting a survey among health workers on Ebola to inform outbreak preparedness and response. Your participation is highly appreciated. Open survey Link - http://url.style/naxEO";
+            
+            $sender = new SenderController();
+            $send_msg = $sender->sender($source, $destination, $msg);
+            if ($send_msg === false) {
+                //Error has occured....
+                echo " SMS Not sent, Number: ";
+                echo $destination;
+            } else {
+                //Success posting the  message and changing the status of sent flag...
+                echo " SMS sent to Number: ";
+                echo $destination;
+                HealthCareWorkers::where('mobile_no', $destination)->update(['sent_status' => 1]);
+            }
+            // exit;            
+        }
+    }
+
 }
