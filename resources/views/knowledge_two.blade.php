@@ -65,65 +65,68 @@
         </style>
     </head>
     <body>
-        <div class='content col-md-12'>
-            <h1> KAPS SURVEY</h1>
-            <h2> Knowledge, attitude and perceptions on Ebola virus disease among health care workers in Kenya. </h2>
+        <div class='content col-md-12'><br>
+        <img src="{{ asset('images/healthcare.jpg') }}" alt="image" height="100" width="100">
+            <h1><b>CHAK HCW SURVEY<b></h1>
+            <h2> Knowledge, attitude and perceptions on Corona virus disease among health care workers in Kenya. </h2>
           
             <div class="col-md-12" style="margin-top:20px;">
-            <h2><b> Section D: Ebola virus prevention</b> </h2>
+            <h2><b> Part A: Indivudual Vaccine Acceptance</b> </h2>
                 <form role="form" method="post" action="{{route('addKnowledgeTwo')}}" >
                     {{ csrf_field() }}
                     <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}">
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>19. Do you know how Ebola virus disease can be prevented? (If No, skip Q.20)</b></label>
+                        <label class="col-sm-2 col-form-label" ><b>12. If you were offered the COVID-19 vaccine now, would you accept it? (If No move to 13)</b></label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="nineteen" name="nineteen" onChange='displayTwenty(this.value);'>
+                            <select class="form-control" id="twelve" name="twelve" onChange='displayThirteen(this.value);'>
                                 <option>Select Answer</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
-                                <option value="Unknown">Don't Know</option>
+                                <option value="Unknown">I Don't Know</option>
+                                <option value="I want to wait until others receive it">I want to wait until others receive it</option>
+                                <option value="I want to see what happens in the longer term among those who receive it">I want to see what happens in the longer term among those who receive it</option>
                             </select>                          
                         </div>
                     </div>
 
-                    <div style="display: none;"  id="numberTwenty" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>20. If yes, how can it be prevented? (Check all that apply)</b></label>
+
+                    <div style="display: none;"  id="numberThirteen" class="form-group row">
+                            <label class="col-sm-2 col-form-label" ><b>13. If No, what are your concerns regading the COVID-19 vaccine?</b></label>
+                            <div class="col-sm-10">
+                                <select  multiple name="thirteens[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherThirteen(this.value);'>
+                                <option>Select Answer</option>
+                                    <option value="Not safe ">Not safe</option>
+                                    <option value="Not effective">Not effective</option>
+                                    <option value="Feel protected because had COVID-19 already">Feel protected because had COVID-19 already</option>
+                                    <option value="Fear of side effects">Fear of side effects</option>
+                                    <option value="Not sure of long term protection">Not sure of long term protection</option>
+                                    <option value="Feel protected by current PPE">Feel protected by current PPE</option>
+                                    <option value="It will kill me">It will kill me</option>
+                                    <option value="No fears">No fears</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <p></p><input id="thirteen" type="text" name="thirteen" class="form-control" style='display:none;'>
+                            </div>
+                        </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" ><b>14. What else would you need to feel more confident about accepting the COVID-19 vaccine?</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="twentys[]" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwenty(this.value);'>
-                                <option value="Preventable by avoiding contact with body fluids of infected persons">Preventable by avoiding contact with body fluids of infected persons</option>
-                                <option value="Preventable by avoiding contact with corpse of persons who die from Ebola ">Preventable by avoiding contact with corpse of persons who die from Ebola </option>
-                                <option value="Immediate treatment in health facility increases chance of survival">Immediate treatment in health facility increases chance of survival</option>
-                                <option value="Immediate treatment in health facility reduces chance of Ebola spread">Immediate treatment in health facility reduces chance of Ebola spread</option>
-                                <option value="Male survivors should use condoms for at least 3 months to prevent sexual transmission">Male survivors should use condoms for at least 3 months to prevent sexual transmission</option>
-                                <option value="Wash hands with soap and water more often ">Wash hands with soap and water more often </option>
-                                <option value="Avoid all physical contact with those suspected of having Ebola ">Avoid all physical contact with those suspected of having Ebola </option>
-                                <option value="Avoid crowded places ">Avoid crowded places</option>
-                                <option value="By getting vaccinated">By getting vaccinated</option>
-                                <option value="By getting the experimental Ebola drugs">By getting the experimental Ebola drugs</option>
-                                <option value="All the above">All the above</option>
-                                <option value="other">Other(specify)</option>
+                            <select multiple name="fourteens" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherFourteen(this.value);'>
+                                <option>Select Answer</option>
+                                <option value="More information about effectiveness">More information about effectiveness</option>
+                                <option value="Seeing other peers get vaccine">seeing other peers get vaccine</option>
+                                <option value="Compensation for time off work">compensation for time off work</option>
+                                <option value="Information from other countries that it is reducing COVID-19 deaths and hospitalizations">information from other countries that it is reducing COVID-19 deaths and hospitalizations</option>
+                                <option value="Approved by supervisor">Approved by supervisor</option>
+                                <option value="Promoted by the government">Promoted by the government</option>                                
                             </select>
-                            <p></p><input id="twenty" type="text" name="twenty" class="form-control" style='display:none;'>
+                            <p></p><input id="fourteen" type="text" name="fourteen" class="form-control" style='display:none;'>
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>21. How do you think Ebola virus disease can best be healed or treated? (Check the best answer)</b></label>
-                        <div class="col-sm-10">
-                            <select  name="twentyones" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTwentyone(this.value);'>
-                                    <option>Select Answer</option>
-                                <option value="traditional medicine">traditional medicine</option>
-                                <option value="spiritual healing">spiritual healing</option>
-                                <option value="Modern medicine">Modern medicine</option>
-                                <option value="No treatment">No treatment</option>
-                                <option value="other">Other(specify)</option>
-                            </select>
-                            <p></p><input id="twentyone" type="text" name="twentyone" class="form-control" style='display:none;'>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>22. Have you had any Ebola training or sensitization? (If No, skip Q.23&24, check all that apply)</b></label>
                         <div class="col-sm-10">
                             <select class="form-control" id="twentytwo" name="twentytwo" onChange='displayTwentythree(this.value);'>
@@ -232,7 +235,7 @@
                     <div style="display: none;"  id="numberThirtyone" class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>31. If no, why?</b></label>
                         <div class="col-sm-10"><input id="thirtyone" type="textarea" name="thirtyone" class="form-control" >
-                        </div>
+                        </div> -->
                     </div>
 
                    
@@ -246,9 +249,17 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/js/bootstrap-select.min.js"></script>
         <script type="text/javascript">
-            function displayTwenty(val){
-                var element=document.getElementById('numberTwenty');
-                if(val=='Yes')
+            // function displayTwelve(val){
+            //     var element=document.getElementById('numberTwelve')
+            //     if(val=='No')
+            //     element.style.display='block';
+            //     else  
+            //     element.style.display='none';
+            // }
+
+            function displayThirteen(val){
+                var element=document.getElementById('numberThirteen');
+                if(val=='No')
                 element.style.display='block';
                 else  
                 element.style.display='none';
@@ -281,22 +292,23 @@
                 else  
                 element.style.display='none';
             }
-            function checkOtherTwenty(val){
-                var element=document.getElementById('twenty');
+            function checkOtherTwelve(val){
+                var element=document.getElementById('twelve');
                 if(val=='other')
                 element.style.display='block';
                 else  
                 element.style.display='none';
             }
-            function checkOtherTwentyone(val){
-                var element=document.getElementById('twentyone');
+            function checkOtherThirteen(val){
+                var element=document.getElementById('thirteen');
                 if(val=='other')
                 element.style.display='block';
                 else  
                 element.style.display='none';
             }
-            function checkOtherTwentyfour(val){
-                var element=document.getElementById('twentyfour');
+            
+            function checkOtherFourteen(val){
+                var element=document.getElementById('fourteen');
                 if(val=='other')
                 element.style.display='block';
                 else  
@@ -313,4 +325,3 @@
         </script> 
     </footer>
 </html>
-k

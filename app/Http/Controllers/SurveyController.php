@@ -61,7 +61,7 @@ class SurveyController extends Controller
             $cadre = $request->cadre;
         }
 
-        for($i = 1; $i <=3; $i++){
+        for($i = 1; $i <=5; $i++){
             $answer = new Answer;
 
             $answer->survey_id = $request->survey_id;
@@ -73,6 +73,14 @@ class SurveyController extends Controller
                 $answer->answers = $request->gender;
             }
             if($i ==3){
+                
+                $answer->answers = $request->phone;
+            }
+            if($i ==4){
+                
+                $answer->answers = $request->experience;
+            }
+            if($i ==5){
                 
                 $answer->answers = $cadre;
             }
@@ -86,17 +94,6 @@ class SurveyController extends Controller
 
     public function addKnowledgeOne(Request $request){
 
-        if($request->five == ''){
-            $five = $request->fives;
-            if(!empty($five)){
-                $five = implode(',', $five);
-            }else{
-                $five = '';
-            }
-        }else{
-            $five = $request->five;
-        }
-
         if($request->six == ''){
             $six = $request->sixes;
             if(!empty($six)){
@@ -107,24 +104,43 @@ class SurveyController extends Controller
         }else{
             $six = $request->six;
         }
+
+        if($request->seven == ''){
+            $seven = $request->sevens;
+            if(!empty($seven)){
+                $seven = implode(',', $seven);
+            }else{
+                $seven = '';
+            }
+        }else{
+            $seven = $request->seven;
+        }
+
         if($request->eight == ''){
             $eight = $request->eights;
-            if(!empty($eight)){
-                $eight = implode(',', $eight);
-            }else{
-                $eight = '';
-            }
         }else{
             $eight = $request->eight;
         }
 
+        // if($request->nine == ''){
+        //     $nine = $request->nines;
+        //     if(!empty($nine)){
+        //         $nine = implode(',', $nine);
+        //     }else{
+        //         $nine = '';
+        //     }
+        // }else{
+        //     $nine = $request->nine;
+        // }
+
+        if($request->nine == ''){
+            $nine = $request->nines;
+        }else{
+            $nine = $request->nine;
+        }
+
         if($request->ten == ''){
             $ten = $request->tens;
-            if(!empty($ten)){
-                $ten = implode(',', $ten);
-            }else{
-                $ten = '';
-            }
         }else{
             $ten = $request->ten;
         }
@@ -132,96 +148,112 @@ class SurveyController extends Controller
         if($request->eleven == ''){
             $eleven = $request->elevens;
             if(!empty($eleven)){
-                $eleven = implode(',', $eleven);
-            }else{
+                $eleven = implode(', ', $eleven);
+            } else{
                 $eleven = '';
             }
         }else{
             $eleven = $request->eleven;
         }
 
-        if($request->fifteen == ''){
-            $fifteen = $request->fifteens;
-            if(!empty($fifteen)){
-                $fifteen = implode(',', $fifteen);
-            }else{
-                $fifteen = '';
-            }
-        }else{
-            $fifteen = $request->fifteen;
-        }
+        // if($request->eleven == ''){
+        //     $eleven = $request->elevens;
+        // }else{
+        //     $eleven = $request->eleven;
+        // }
+        
 
-        if($request->seventeen == ''){
-            $seventeen = $request->seventeens;
-            if(!empty($seventeen)){
-                $seventeen = implode(',', $seventeen);
-            }else{
-                $seventeen = '';
-            }
-        }else{
-            $seventeen = $request->seventeen;
-        }
-        if($request->eighteen == ''){
-            $eighteen = $request->eighteens;
-            if(!empty($eighteen)){
-                $eighteen = implode(',', $eighteen);
-            }else{
-                $eighteen = '';
-            }        
-        }else{
-            $eighteen = $request->eighteen;
-        }
+        // if($request->fifteen == ''){
+        //     $fifteen = $request->fifteens;
+        //     if(!empty($fifteen)){
+        //         $fifteen = implode(',', $fifteen);
+        //     }else{
+        //         $fifteen = '';
+        //     }
+        // }else{
+        //     $fifteen = $request->fifteen;
+        // }
+
+        // if($request->seventeen == ''){
+        //     $seventeen = $request->seventeens;
+        //     if(!empty($seventeen)){
+        //         $seventeen = implode(',', $seventeen);
+        //     }else{
+        //         $seventeen = '';
+        //     }
+        // }else{
+        //     $seventeen = $request->seventeen;
+        // }
+        // if($request->eighteen == ''){
+        //     $eighteen = $request->eighteens;
+        //     if(!empty($eighteen)){
+        //         $eighteen = implode(',', $eighteen);
+        //     }else{
+        //         $eighteen = '';
+        //     }        
+        // }else{
+        //     $eighteen = $request->eighteen;
+        // }
 
 
-        for($i = 4; $i <= 18; $i++){
+        for($i = 6; $i <= 11; $i++){
             $answer = new Answer;
             $answer->survey_id = $request->survey_id;
             $answer->question_id = $i;
-            if($i == 4){
-                $answer->answers = $request->four;
-            }
-            if($i == 5){
-                $answer->answers = $five;
-            }
+            
             if($i == 6){
                 $answer->answers = $six;
             }
             if($i == 7){
-                $answer->answers = $request->seven;
+                $answer->answers = $seven;
             }
             if($i == 8){
-                $answer->answers = $eight;
+                $answer->answers = $request->eight;
             }
             if($i == 9){
-                $answer->answers = $request->nine;
+                $answer->answers = $nine;  
             }
             if($i == 10){
                 $answer->answers = $ten;
             }
+
+            // if($i == 11){
+            //     $elevens = $request->elevens;
+
+            //     if(!empty($elevens)){
+            //         $elevens = implode(', ', $elevens);
+            //     } else{
+            //         $elevens = '';
+            //     }
+            //     $answer->answers = $elevens;
+            // }
+
+
             if($i == 11){
                 $answer->answers = $eleven;
             }
-            if($i == 12){
-                $answer->answers = $request->twelve;
-            }
-            if($i == 13){
-                $answer->answers = $request->thirteen;
-            }
-            if($i == 14){
-                $answer->answers = $request->fourteen;
-            }
-            if($i == 15){
-                $answer->answers = $fifteen;
-            }
-            if($i == 16){
-                $answer->answers = $request->sixteen;
-            }
-            if($i == 17){
-                $answer->answers = $seventeen;
-            }
-            if($i == 18){
-                $answer->answers = $eighteen;
-            }
+            
+            // if($i == 12){
+            //     $answer->answers = $request->twelve;
+            // }
+            // if($i == 13){
+            //     $answer->answers = $request->thirteen;
+            // }
+            // if($i == 14){
+            //     $answer->answers = $request->fourteen;
+            // }
+            // if($i == 15){
+            //     $answer->answers = $fifteen;
+            // }
+            // if($i == 16){
+            //     $answer->answers = $request->sixteen;
+            // }
+            // if($i == 17){
+            //     $answer->answers = $seventeen;
+            // }
+            // if($i == 18){
+            //     $answer->answers = $eighteen;
+            // }
             $answer->save();
         }
 
@@ -230,82 +262,111 @@ class SurveyController extends Controller
     }
 
     public function addKnowledgeTwo(Request $request){
-        if($request->twenty == ''){
-            $twenty = $request->twentys;
-            if(!empty($twenty)){
-                $twenty = implode(',', $twenty);
-            }else{
-                $twenty = '';
-            } 
+        // if($request->twelve == ''){
+        //     $twelve = $request->twelves;
+        //     if(!empty($twelve)){
+        //         $twelve = implode(',', $twelve);
+        //     }else{
+        //         $twelve = '';
+        //     } 
+        // }else{
+        //     $twelve = $request->twelve;
+        // }
+
+        if($request->twelve == ''){
+            $twelve = $request->twelves;
         }else{
-            $twenty = $request->twenty;
-        }
-        
-        if($request->twentyone == ''){
-            $twentyone = $request->twentyones;
-        }else{
-            $twentyone = $request->twentyone;
-        }
-        if($request->twentyfour == ''){
-            $twentyfour = $request->twentyfours;
-        }else{
-            $twentyfour = $request->twentyfour;
-        }
-        if($request->twentyfive == ''){
-            $twentyfive = $request->twentyfives;
-            if(!empty($twentyfive)){
-                $twentyfive = implode(',', $twentyfive);
-            }else{
-                $twentyfive = '';
-            } 
-        }else{
-            $twentyfive = $request->twentyfive;
+            $twelve = $request->twelve;
         }
 
-        for($i = 19; $i <= 31; $i++){
+        if($request->thirteen == ''){
+            $thirteen = $request->thirteens;
+            if(!empty($thirteen)){
+                $thirteen = implode(',', $thirteen);
+            }else{
+                $thirteen = '';
+            } 
+        }else{
+            $thirteen = $request->thirteen;
+        }
+        
+        // if($request->thirteen == ''){
+        //     $thirteen = $request->thirteens;
+        // }else{
+        //     $thirteen = $request->thirteen;
+        // }
+
+        if($request->fourteen == ''){
+            $fourteen = $request->fourteens;
+        }else{
+            $fourteen = $request->fourteen;
+        }
+
+        // if($request->twentyfour == ''){
+        //     $twentyfour = $request->twentyfours;
+        // }else{
+        //     $twentyfour = $request->twentyfour;
+        // }
+        // if($request->twentyfive == ''){
+        //     $twentyfive = $request->twentyfives;
+        //     if(!empty($twentyfive)){
+        //         $twentyfive = implode(',', $twentyfive);
+        //     }else{
+        //         $twentyfive = '';
+        //     } 
+        // }else{
+        //     $twentyfive = $request->twentyfive;
+        // }
+
+        for($i = 12; $i <= 14; $i++){
             $answer = new Answer;
             $answer->survey_id = $request->survey_id;
             $answer->question_id = $i;
 
-            if($i == 19){
-                $answer->answers = $request->nineteen;
+            // if($i == 11){
+            //     $answer->answers = $request->eleven;
+            // }
+            if($i == 12){
+                $answer->answers = $request-> twelve;
             }
-            if($i == 20){
-                $answer->answers = $twenty;
+            if($i == 13){
+                $answer->answers = $thirteen;
             }
-            if($i == 21){
-                $answer->answers = $twentyone;
+            if($i == 14){
+                $answer->answers = $fourteen;
             }
-            if($i == 22){
-                $answer->answers = $request->twentytwo;
-            }
-            if($i == 23){
-                $answer->answers = $request->twentythree;
-            }
-            if($i == 24){
-                $answer->answers = $twentyfour;
-            }
-            if($i == 25){
-                $answer->answers = $twentyfive;
-            }
-            if($i == 26){
-                $answer->answers = $request->twentysix;
-            }
-            if($i == 27){
-                $answer->answers = $request->twentyseven;
-            }
-            if($i == 28){
-                $answer->answers = $request->twentyeight;
-            }
-            if($i == 29){
-                $answer->answers = $request->twentynine;
-            }
-            if($i == 30){
-                $answer->answers = $request->thirty;
-            }
-            if($i == 31){
-                $answer->answers = $request->thirtyone;
-            }
+
+
+            // if($i == 22){
+            //     $answer->answers = $request->twentytwo;
+            // }
+            // if($i == 23){
+            //     $answer->answers = $request->twentythree;
+            // }
+            // if($i == 24){
+            //     $answer->answers = $twentyfour;
+            // }
+            // if($i == 25){
+            //     $answer->answers = $twentyfive;
+            // }
+            // if($i == 26){
+            //     $answer->answers = $request->twentysix;
+            // }
+            // if($i == 27){
+            //     $answer->answers = $request->twentyseven;
+            // }
+            // if($i == 28){
+            //     $answer->answers = $request->twentyeight;
+            // }
+            // if($i == 29){
+            //     $answer->answers = $request->twentynine;
+            // }
+            // if($i == 30){
+            //     $answer->answers = $request->thirty;
+            // }
+            // if($i == 31){
+            //     $answer->answers = $request->thirtyone;
+            // }
 
             $answer->save();
         }
@@ -318,99 +379,112 @@ class SurveyController extends Controller
     public function demographicsPartThree(Request $request){
 
 
-        if($request->thirtysix == ''){
-            $thirtysix = $request->thirtysixes;
-            if(!empty($thirtysix)){
-                $thirtysix = implode(', ', $thirtysix);
-            } else{
-                $thirtysix = '';
-            }
+        // if($request->thirtysix == ''){
+        //     $thirtysix = $request->thirtysixes;
+        //     if(!empty($thirtysix)){
+        //         $thirtysix = implode(', ', $thirtysix);
+        //     } else{
+        //         $thirtysix = '';
+        //     }
+        // }else{
+        //     $thirtysix = $request->thirtysix;
+        // }
+
+        // if($request->thirtyseven == ''){
+        //     $thirtyseven = $request->thirtysevens;
+        //     if(!empty($thirtyseven)){
+        //         $thirtyseven = implode(', ', $thirtyseven);
+        //     } else{
+        //         $thirtyseven = '';
+        //     }
+        // }else{
+        //     $thirtyseven = $request->thirtyseven;
+        // }
+
+        // if($request->thirtyeight == ''){
+        //     $thirtyeight = $request->thirtyeights;
+        //     if(!empty($thirtyeight)){
+        //         $thirtyeight = implode(', ', $thirtyeight);
+        //     } else{
+        //         $thirtyeight = '';
+        //     }
+        // }else{
+        //     $thirtyeight = $request->thirtyeight;
+        // }
+
+
+
+        if($request->fifteen == ''){
+            $fifteen = $request->fifteens;
         }else{
-            $thirtysix = $request->thirtysix;
+            $fifteen = $request->fifteen;
         }
 
-        if($request->thirtyseven == ''){
-            $thirtyseven = $request->thirtysevens;
-            if(!empty($thirtyseven)){
-                $thirtyseven = implode(', ', $thirtyseven);
-            } else{
-                $thirtyseven = '';
-            }
-        }else{
-            $thirtyseven = $request->thirtyseven;
-        }
-
-        if($request->thirtyeight == ''){
-            $thirtyeight = $request->thirtyeights;
-            if(!empty($thirtyeight)){
-                $thirtyeight = implode(', ', $thirtyeight);
-            } else{
-                $thirtyeight = '';
-            }
-        }else{
-            $thirtyeight = $request->thirtyeight;
-        }
-
-        for($i = 32; $i <= 41; $i++){
+        for($i = 15; $i <= 18; $i++){
             $answer = new Answer;
             $answer->survey_id = $request->survey_id;
             $answer->question_id = $i;
-            if($i == 32){
-                $answer->answers = $request->thirtytwo;
-            }
-            if($i == 33){
-                $thirtythrees = $request->thirtythrees;
 
-                if(!empty($thirtythrees)){
-                    $thirtythrees = implode(', ', $thirtythrees);
-                } else{
-                    $thirtythrees = '';
-                }
-                $answer->answers = $thirtythrees;
+            if($i == 15){
+                $answer->answers = $fifteen;
             }
-            if($i == 34){
-                $thirtyfours = $request->thirtyfours;
+            
+            if($i == 16){
+                $answer->answers = $request->sixteen;
+            }
+            if($i == 17){
+                $seventeens = $request->seventeens;
 
-                if(!empty($thirtyfours)){
-                    $thirtyfours = implode(', ', $thirtyfours);
+                if(!empty($seventeens)){
+                    $seventeens = implode(', ', $seventeens);
                 } else{
-                    $thirtyfours = '';
+                    $seventeens = '';
                 }
-                $answer->answers = $thirtyfours;
+                $answer->answers = $seventeens;
             }
-            if($i == 35){
-                $thirtyfives = $request->thirtyfives;
-                if(!empty($thirtyfives)){
-                    $thirtyfives = implode(', ', $thirtyfives);
+            if($i == 18){
+                $eighteens = $request->eighteens;
+
+                if(!empty($eighteens)){
+                    $eighteens = implode(', ', $eighteens);
                 } else{
-                    $thirtyfives = '';
+                    $eighteens = '';
                 }
-                $answer->answers = $thirtyfives;
+                $answer->answers = $eighteens;
             }
-            if($i == 36){
-                $answer->answers = $thirtysix;
-            }
-            if($i == 37){
-                $answer->answers = $thirtyseven;
-            }
-            if($i == 38){
-                $answer->answers = $thirtyeight;
-            }
-            if($i == 39){
-                $answer->answers = $request->thirtynine;
-            }
-            if($i == 40){
-                $answer->answers = $request->forty;
-            }
-            if($i == 41){
-                $fortyones = $request->fortyones;
-                if(!empty($fortyones)){
-                    $fortyones = implode(', ', $fortyones);
-                } else{
-                    $fortyones = '';
-                }
-                $answer->answers = $fortyones;
-            }
+            // if($i == 35){
+            //     $thirtyfives = $request->thirtyfives;
+            //     if(!empty($thirtyfives)){
+            //         $thirtyfives = implode(', ', $thirtyfives);
+            //     } else{
+            //         $thirtyfives = '';
+            //     }
+            //     $answer->answers = $thirtyfives;
+            // }
+            // if($i == 36){
+            //     $answer->answers = $thirtysix;
+            // }
+            // if($i == 37){
+            //     $answer->answers = $thirtyseven;
+            // }
+            // if($i == 38){
+            //     $answer->answers = $thirtyeight;
+            // }
+            // if($i == 39){
+            //     $answer->answers = $request->thirtynine;
+            // }
+            // if($i == 40){
+            //     $answer->answers = $request->forty;
+            // }
+            // if($i == 41){
+            //     $fortyones = $request->fortyones;
+            //     if(!empty($fortyones)){
+            //         $fortyones = implode(', ', $fortyones);
+            //     } else{
+            //         $fortyones = '';
+            //     }
+            //     $answer->answers = $fortyones;
+            // }
 
             $answer->save();
 
@@ -453,7 +527,7 @@ class SurveyController extends Controller
             $last_name = $hcw->l_name;
             $destination = $hcw->mobile_no;
             // $destination = '+254721990078';
-            $msg = "Hello " . $first_name . ", the National Ministry of Health is conducting a survey among health workers on Ebola to inform outbreak preparedness and response. Your participation is highly appreciated. Open survey Link - http://url.style/naxEO";
+            $msg = "Hello " . $first_name . ", the National Ministry of Health is conducting a survey among health workers on Corona to inform outbreak preparedness and response. Your participation is highly appreciated. Open survey Link - http://url.style/naxEO";
             
             $sender = new SenderController();
             $send_msg = $sender->sender($source, $destination, $msg);

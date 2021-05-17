@@ -65,12 +65,13 @@
         </style>
     </head>
     <body>
-        <div class='content col-md-12'>
-            <h1> KAPS SURVEY</h1>
-            <h2> Knowledge, attitude and perceptions on Ebola virus disease among health care workers in Kenya. </h2>
+        <div class='content col-md-12'><br>
+        <img src="{{ asset('images/healthcare.jpg') }}" alt="image" height="100" width="100">
+            <h1>CHAK HCW SURVEY</h1>
+            <h2> Knowledge, attitude and perceptions on Corona virus disease among health care workers in Kenya. </h2>
           
             <div class="col-md-12" style="margin-top:20px;">
-            <h2><b> Section B: Demographic data </b> </h2>
+            <h2><b> Part B: Demographic data </b> </h2>
                 <form role="form" method="post" action="{{route('addDemographics')}}" >
                     {{ csrf_field() }}
                     <input type="hidden" name="survey_id" class="form-control" value="{{$survey->id}}">
@@ -78,23 +79,41 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>1. Age in years: </b></label>
                         <div class="col-sm-10">
-                            <input min='18' type="number" name="age" class="form-control" id="age">
+                            <input min='18' type="number" name="age" class="form-control" id="age" required>
                           </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>2. Gender </b></label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="gender" name="gender">
+                            <select class="form-control" id="gender" name="gender" required>
                                 <option>Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>                          
                         </div>
+
+
+                        </div>
+
+                        <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" ><b>3. Phone Number: </b></label>
+                        <div class="col-sm-10">
+                            <input min='18' type="number" name="phone" class="form-control" id="phone">
+                          </div>
+                        
+                        </div>
+
+                        <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" ><b>4. Experience (in years): </b></label>
+                        <div class="col-sm-10">
+                            <input min='0' type="number" name="experience" class="form-control" id="experience" required>
+                          </div>
+
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>3.	Cadre of Health care worker </b></label>
+                        <label class="col-sm-2 col-form-label" ><b>5.	Cadre of Health care worker </b></label>
                         <div class="col-sm-10">
-                            <select name="cadres" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOther(this.value);'>
+                            <select name="cadres" class=" selectpicker form-control" data-width="100%" data-live-search="true" required onchange='checkOther(this.value);'>
                                 <option data-tokens="Student" value="Student">Student</option>
                                 <option data-tokens="Nurse" value="Nurse">Nurse</option>
                                 <option data-tokens="Clinical Officer" value="Clinical Officer">Clinical Officer</option>

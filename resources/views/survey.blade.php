@@ -66,23 +66,25 @@
         @toastr_css
     </head>
     <body>
-        <div class='content col-md-12'>
-            <h1> KAPS SURVEY</h1>
-            <h2> Knowledge, attitude and perceptions on Ebola virus disease among health care workers in Kenya. </h2>
-            <h4><b> Hello, Ministry of Health, Kenya in collaboration with partners is conducting a survey on Ebola Virus Disease (EVD)
+    
+        <div class='content col-md-12' ><br>
+        <img src="{{ asset('images/healthcare.jpg') }}" alt="image" height="100" width="100" >
+            <h1><b>CHAK HCW SURVEY<b></h1>
+            <h2> Knowledge, attitude and perceptions on Corona virus disease among health care workers in Kenya. </h2>
+            <h4><b> Hello, Ministry of Health, Kenya in collaboration with partners is conducting a survey on Corona Virus Disease (COVID-19)
             to better understand knowledge, attitudes and perceptions among Health Care Workers. 
             Your participation in this survey is voluntary and all information you give will be kept confidential. 
-            The survey will be used to guide review of Ebola health education materials as well as ascertain training needs. 
-            Kindly note your honest opinion is crucial for strengthening Ebola Virus Disease preparedness and response in our country.</b> </h4>
+            The survey will be used to guide review of Corona health education materials as well as ascertain training needs. 
+            Kindly note your honest opinion is crucial for strengthening Corona Virus Disease preparedness and response in our country.</b> </h4>
             
             <div class="col-md-12" style="margin-top:20px;">
-            <h2><b> Section A: Identification data </b> </h2>
+            <h2><b> Part A: Demographic data </b> </h2>
                 <form role="form" method="post" action="{{route('addSurvey')}}" >
                     {{ csrf_field() }}
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="exampleInputEmail1"><b>County </b></label>
                         <div class="col-sm-10">
-                            <select id="county" required name="county_id" class="selectpicker form-control" data-live-search="true">
+                            <select id="county" required name="county_id" class="selectpicker form-control" data-live-search="true" required>
                                 @foreach( $counties as $county)
                                     <option data-tokens="{{$county->name}}" value="{{$county->id}}">{{ ucwords ($county->name)}}</option>
                                 @endforeach
@@ -92,7 +94,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="exampleInputEmail1"><b>Sub - County </b></label>
                         <div class="col-sm-10">
-                            <select required id="sub_county" name="sub_county_id" class="form-control" data-width="100%">
+                            <select required id="sub_county" name="sub_county_id" class="form-control" data-width="100%" required>
                             <option value='300'>Not Applicable</option>
                             </select>
                           </div>
