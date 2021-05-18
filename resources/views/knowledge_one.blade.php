@@ -89,35 +89,7 @@
                         </div>
                     </div>
 
-                    <!-- <div style="display: none;"  id="numbersix" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>6.	If yes, from whom did you hear of Ebola? (Check all that apply)</b></label>
-                        <div class="col-sm-10">
-                            <select multiple name="sixes[]" class=" selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherFive(this.value);'>
-                                <option data-tokens="Health worker" value="Health worker">Health worker</option>
-                                <option data-tokens="Sensitization" value="Sensitization">Sensitization</option>
-                                <option data-tokens="Radio" value="Radio">Radio</option>
-                                <option data-tokens="Television" value="Television">Television</option>
-                                <option data-tokens="Internet" value="Internet">Internet</option>
-                                <option data-tokens="Print Media" value="Print Media">Print Media</option>
-                                <option data-tokens="Social Media" value="Social Media">Social Media</option>
-                                <option data-tokens="Other" value="other">Other (Specify)</option>
-                            </select>
-                            <p></p><input id="five" type="text" name="five" class="form-control" style='display:none;'>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="form-group row"> -->
-                        <!-- <label class="col-sm-2 col-form-label" ><b>6.	What is Corona virus disease? (Check the best answer)</b></label>
-                        <div class="col-sm-10">
-                            <select multiple name="sixes[]" class="selectpicker form-control" data-width="100% data-live-search="true" onchange='checkOtherSix(this.value);'>
-                                <option data-tokens="It is a severe and often deadly disease caused by Ebola virus" value="It is a severe and often deadly disease caused by Ebola virus">It is a severe and often deadly disease caused by Ebola virus</option>
-                                <option data-tokens="It is a severe disease caused by a protozoann" value="It is a severe disease caused by a protozoann">It is a severe disease caused by a protozoann</option>
-                                <option data-tokens="Disease only found among people eating monkeys in Congo and West Africa. " value="Disease only found among people eating monkeys in Congo and West Africa. ">Disease only found among people eating monkeys in Congo and West Africa. </option>
-                                <option data-tokens="Don’t know" value="Don’t know">Don’t know</option>
-                                <option data-tokens="Other" value="other">Other (Specify)</option>
-                            </select>
-                            <p></p><input id="six" type="text" name="six" class="form-control" style='display:none;'>
-                        </div> -->
+                    
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>7. Have any of your friends/family contracted COVID 19? </b></label>
@@ -148,8 +120,8 @@
                     <h2><b> Sources of Information</b> </h2>
                         <label class="col-sm-2 col-form-label" ><b>9.  If you did not receive training, where would you prefer to receive this training on administering any of the COVID-19 vaccines? </b></label>
                         <div class="col-sm-10">
-                            <select multiple name="nines[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherNine(this.value);'>
-                                <option>Select Answer</option>
+                            <select id="nineSelected" multiple name="nines[]" placeholder="Select Answer" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadNine();'>
+                                <!-- <option>Select Answer</option> -->
                                 <option value="Professional bodies">Professional Bodies</option>
                                 <option value="Facility training">Facility Training</option>
                                 <option value="Website">Website</option>
@@ -166,9 +138,9 @@
                     <div class="form-group row">
                             <label class="col-sm-2 col-form-label" ><b>10. Where did you receive your information regarding the COVID-19 vaccines?</b></label>
                             <div class="col-sm-10">
-                                <select multiple name="tens" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherTen(this.value);'>
+                                <select id="tenSelected" multiple name="tens[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadTen();'>
                                     <!-- <option>Select answer if you choose "No" in 11</option> -->
-                                    <option>Select Answer</option>
+                                    <!-- <option>Select Answer</option> -->
                                     <option value="Professional bodies">Professional Bodies</option>
                                     <option value="Facility training">Facility Training</option>
                                     <option value="Website">website</option>
@@ -185,8 +157,8 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>11. What sources of information do you trust regarding the COVID-19 vaccine?</b></label>
                         <div class="col-sm-10">
-                            <select multiple name="elevens[]" id="eleven" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='checkOtherEleven(this.value);'>
-                                <option>Select Answer</option>
+                            <select id="elevenSelected" multiple name="elevens[]" id="eleven" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadEleven();'>
+                                <!-- <option>Select Answer</option> -->
                                 <option data-tokens="Media(TV)" value="Media(TV)">Media(TV)</option>
                                 <option data-tokens="Radio" value="Radio">Radio</option>
                                 <option data-tokens="Website" value="website">Website</option>
@@ -207,116 +179,6 @@
 
                         </div>
                     </div>
-                    <!-- <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>11. Where did you receive your information regarding the COVID-19 vaccines?</b></label>
-                        <div class="col-sm-10">
-                            <select  name="elevens[]" class=" selectpicker form-control" data-width="100%" onchange='checkOtherEleven(this.value);'>
-                                <option>Select Answer</option>
-                                <option value="Professional bodies">Professional Bodies</option>
-                                <option  value="facility training,">Facility Training</option>
-                                <option  value="website,">website</option>
-                                <option  value="whatsapp,">WhatsApp</option>
-                                <option  value="newspaper,,">Newspaper</option>
-                                <option  value="flyer,,">Flyer</option>
-                                <option  value="poster,">Poster</option>
-                                <option  value="Professional bodies">Professional Bodies</option>
-                                <option value="other">Other (Specify)</option>
-                            </select>
-                            <p></p><input id="eleven" type="text" name="eleven" class="form-control" style='display:none;'>
-                        </div>
-                    </div> -->
-
-                    
-
-                    <!-- <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>13. Do you know who to contact in case you see a suspect case of Ebola virus diseases?  </b></label>
-                        <div class="col-sm-10">
-                            <select class="form-control"  name="thirteen">
-                                <option>Select Answer</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                                <option value="Unknown">Don't Know</option>
-                            </select>                          
-                        </div>
-                    </div>
-                    
-
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>14. In your opinion, do you think animals can transmit Ebola? (If No, skip Q.15) </b></label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="fourteen" name="fourteen" onChange='displayFifteen(this.value);'>
-                                <option>Select Answer</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                                <option value="Unknown">Don't Know</option>
-                            </select>                          
-                        </div>
-                    </div>
-
-                    <div style="display:none;" id="numberFifteen" class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>15. If yes, through which animals? (Check all that apply)</b></label>
-                        <div class="col-sm-10">
-                            <select multiple name="fifteens[]" class=" selectpicker form-control" data-width="100%" onchange='checkOtherFifteen(this.value);'>
-                                <option value="Goats">Goats</option>
-                                <option  value="Cattle">Cattle</option>
-                                <option  value="Sheep">Sheep</option>
-                                <option  value="Poultry">Poultry</option>
-                                <option value="Dogs">Dogs</option>
-                                <option  value="Monkey">Monkey</option>
-                                <option  value="Fruit Bats">Fruit Bats</option>
-                                <option  value="Antelopes">Antelopes</option>
-                                <option  value="Wild Pigs">Wild Pigs</option>
-                                <option value="other">Other (Specify)</option>
-                            </select>
-                            <p></p><input id="fifteen" type="text" name="fifteen" class="form-control" style='display:none;'>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>16. Do you think you are at risk of contracting Ebola virus disease? (Check the best answer)  </b></label>
-                        <div class="col-sm-10">
-                            <select class="form-control"  name="sixteen">
-                                <option>Select Answer</option>
-                                <option value="No Risk">No Risk</option>
-                                <option value="Low Risk">Low Risk</option>
-                                <option value="High Risk">High Risk</option>
-                                <option value="Unknown">Don't Know</option>
-                            </select>                          
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>17. If at risk, why? (Check all that apply)</b></label>
-                        <div class="col-sm-10">
-                            <select multiple name="seventeens[]" class="selectpicker form-control" data-width="100%" onchange='checkOtherSeventeen(this.value);'>
-                                <option value="Directly sees patients">Directly sees patients</option>
-                                <option  value="Involved in patient care">Involved in patient care</option>
-                                <option  value="Remove patient blood">Remove patient blood</option>
-                                <option  value="Test patient blood">Test patient blood</option>
-                                <option value="Do patient follow up at community">Do patient follow up at community</option>
-                                <option  value="Do patient triage">Do patient triage</option>
-                                <option value="other">Other (Specify)</option>
-                            </select>
-                            <p></p><input id="seventeen" type="text" name="seventeen" class="form-control" style='display:none;'>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" ><b>18. If today, you come across a suspected Ebola patient then what will you do? (Check the best answer)</b></label>
-                        <div class="col-sm-10">
-                            <select multiple name="eighteens[]" class="selectpicker form-control" data-width="100%" onchange='checkOtherEighteen(this.value);'>
-                                <option value="Treat the patient like other patients">Treat the patient like other patients</option>
-                                <option  value="Run away because Ebola is highly infectious">Run away because Ebola is highly infectious</option>
-                                <option  value="Call for help from other clinicians">Call for help from other clinicians</option>
-                                <option  value="Call National level">Call National level</option>
-                                <option value="Manage patient using extra infection prevention& control measures and notify incharge">Manage patient using extra infection prevention& control measures and notify incharge</option>
-                                <option  value="Refer the patient">Refer the patient</option>
-                                <option  value="Unknown">Don't Know</option>
-                                <option value="other">Other (Specify)</option>
-                            </select>
-                            <p></p><input id="eighteen" type="text" name="eighteen" class="form-control" style='display:none;'>
-                        </div>
-                    </div> -->
-
 
                    
                     <button type="submit" class="btn btn-primary"> Next </button>
@@ -330,7 +192,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/js/bootstrap-select.min.js"></script>
         <script type="text/javascript">
 
-            
+        // function to load all selected text and join them
+            function loadNine(){
+                var element2 = document.getElementById('nine');
+                //setting the value of hidden input to the joined selected text
+                element2.value = $('#nineSelected option:selected').toArray().map(item => item.text).join();
+            }
+
+            function loadTen(){
+                var element2 = document.getElementById('ten');
+                element2.value = $('#tenSelected option:selected').toArray().map(item => item.text).join();
+            }
+
+            function loadEleven(){
+                var element2 = document.getElementById('eleven');
+                element2.value = $('#elevenSelected option:selected').toArray().map(item => item.text).join();
+            }
+
 
             function checkOtherSix(val){
                 var element=document.getElementById('six');
@@ -369,28 +247,7 @@
                 element.style.display='none';
             }
 
-            
-            // function checkOtherFifteen(val){
-            //     var element=document.getElementById('fifteen');
-            //     if(val=='other')
-            //     element.style.display='block';
-            //     else  
-            //     element.style.display='none';
-            // }
-            function checkOtherSeventeen(val){
-                var element=document.getElementById('seventeen');
-                if(val=='other')
-                element.style.display='block';
-                else  
-                element.style.display='none';
-            }
-            function checkOtherEighteen(val){
-                var element=document.getElementById('eighteen');
-                if(val=='other')
-                element.style.display='block';
-                else  
-                element.style.display='none';
-            }
+           
 
             function displaySix(val){
                 var element=document.getElementById('numberSix');
