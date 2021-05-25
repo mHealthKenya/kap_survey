@@ -120,13 +120,7 @@
                     <h2><b> Sources of Information</b> </h2>
                         <label class="col-sm-2 col-form-label" ><b>9.  If you did not receive training, where would you prefer to receive this training on administering any of the COVID-19 vaccines? </b></label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
-                            <select id="nineSelected" multiple name="nines[]" placeholder="Select Answer" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadNine();'>
-                                <!-- <option>Select Answer</option> -->
-=======
                             <select id="nineSelected" multiple name="nines[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadNine();'>
-                                <option>Select Answer</option>
->>>>>>> e20f9a07e25478035080eaea351eb66705db5ace
                                 <option value="Professional bodies">Professional Bodies</option>
                                 <option value="Facility training">Facility Training</option>
                                 <option value="Website">Website</option>
@@ -136,7 +130,7 @@
                                 <option value="Poster">Poster</option>
                                 <option value="other">Other</option>
                             </select>  
-                            <input id="nine" type="text" name="nine" class="form-control" style='display:none;' > 
+                            <input type="text" name="nine" class="form-control" style='display:none;' > 
                         </div>
                     </div>
                     <small style = 'color:red;'> You may skip Question 10 if your response was 'No' in Question 8.</small>
@@ -145,11 +139,7 @@
                             <div class="col-sm-10">
                                 <select id="tenSelected" multiple name="tens[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadTen();'>
                                     <!-- <option>Select answer if you choose "No" in 11</option> -->
-<<<<<<< HEAD
-                                    <!-- <option>Select Answer</option> -->
-=======
                                     <option disabled>Select Answer</option>
->>>>>>> e20f9a07e25478035080eaea351eb66705db5ace
                                     <option value="Professional bodies">Professional Bodies</option>
                                     <option value="Facility training">Facility Training</option>
                                     <option value="Website">website</option>
@@ -166,7 +156,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>11. What sources of information do you trust regarding the COVID-19 vaccine?</b></label>
                         <div class="col-sm-10">
-                            <select id="elevenSelected" multiple name="elevens[]" id="eleven" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadEleven();'>
+                            <select id="elevenSelected" multiple name="elevens[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadEleven();'>
                                 <!-- <option>Select Answer</option> -->
                                 <option data-tokens="Media(TV)" value="Media(TV)">Media(TV)</option>
                                 <option data-tokens="Radio" value="Radio">Radio</option>
@@ -201,25 +191,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/js/bootstrap-select.min.js"></script>
         <script type="text/javascript">
 
-<<<<<<< HEAD
-        // function to load all selected text and join them
-            function loadNine(){
-                var element2 = document.getElementById('nine');
-                //setting the value of hidden input to the joined selected text
-                element2.value = $('#nineSelected option:selected').toArray().map(item => item.text).join();
-            }
-
-            function loadTen(){
-                var element2 = document.getElementById('ten');
-                element2.value = $('#tenSelected option:selected').toArray().map(item => item.text).join();
-            }
-
-            function loadEleven(){
-                var element2 = document.getElementById('eleven');
-                element2.value = $('#elevenSelected option:selected').toArray().map(item => item.text).join();
-            }
-
-=======
             //function loadNine loads all the selected text and joins them
             function loadNine(){
                 //initialize the hidden input with id nine as element2
@@ -228,6 +199,7 @@
                 element2.value = $('#nineSelected option:selected').toArray().map(item => item.text).join();
 
             }
+
             //same as loadNine
             function loadTen(){
                
@@ -235,7 +207,6 @@
                element2.value = $('#tenSelected option:selected').toArray().map(item => item.text).join();
 
            }
->>>>>>> e20f9a07e25478035080eaea351eb66705db5ace
 
             function checkOtherSix(val){
                 var element=document.getElementById('six');
@@ -285,21 +256,7 @@
                 element.style.display='none';
             }
             
-            // function displayTen(val){
-            //     var element=document.getElementById('numberTen');
-            //     if(val=='Yes')
-            //     element.style.display='block';
-            //     else  
-            //     element.style.display='none';
-            // }
-
-            // function displayFifteen(val){
-            //     var element=document.getElementById('numberFifteen');
-            //     if(val=='Yes')
-            //     element.style.display='block';
-            //     else  
-            //     element.style.display='none';
-            // }
+        
 
         </script> 
     </footer>
