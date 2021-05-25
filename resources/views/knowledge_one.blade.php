@@ -130,7 +130,7 @@
                                 <option value="Poster">Poster</option>
                                 <option value="other">Other</option>
                             </select>  
-                            <input id = "nine" type="text" class="form-control" style='display:none;' > 
+                            <input id = "nine" type="text" name = "nine" class="form-control" style='display:none;' > 
                         </div>
                     </div>
                     <small style = 'color:red;'> You may skip Question 10 if your response was 'No' in Question 8.</small>
@@ -138,8 +138,7 @@
                             <label class="col-sm-2 col-form-label" ><b>10. Where did you receive your information regarding the COVID-19 vaccines?</b></label>
                             <div class="col-sm-10">
                                 <select id="tenSelected" multiple name="tens[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadTen();'>
-                                    <!-- <option>Select answer if you choose "No" in 11</option> -->
-                                    <option disabled>Select Answer</option>
+                                    <!-- <option disabled>Select Answer</option> -->
                                     <option value="Professional bodies">Professional Bodies</option>
                                     <option value="Facility training">Facility Training</option>
                                     <option value="Website">website</option>
