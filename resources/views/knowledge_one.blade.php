@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CHAK SURVEY</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -130,7 +130,7 @@
                                 <option value="Poster">Poster</option>
                                 <option value="other">Other</option>
                             </select>  
-                            <input type="text" name="nine" class="form-control" style='display:none;' > 
+                            <input id = "nine" type="text" class="form-control" style='display:none;' > 
                         </div>
                     </div>
                     <small style = 'color:red;'> You may skip Question 10 if your response was 'No' in Question 8.</small>
@@ -205,6 +205,13 @@
                
                var element2 = document.getElementById('ten');
                element2.value = $('#tenSelected option:selected').toArray().map(item => item.text).join();
+
+           }
+
+           function loadEleven(){
+               
+               var element2 = document.getElementById('eleven');
+               element2.value = $('#elevenSelected option:selected').toArray().map(item => item.text).join();
 
            }
 

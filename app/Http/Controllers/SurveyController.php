@@ -122,28 +122,41 @@ class SurveyController extends Controller
             $eight = $request->eight;
         }
 
-        // if($request->nine == ''){
-        //     $nine = $request->nines;
-        //     if(!empty($nine)){
-        //         $nine = implode(',', $nine);
-        //     }else{
-        //         $nine = '';
-        //     }
-        // }else{
-        //     $nine = $request->nine;
-        // }
-
         if($request->nine == ''){
             $nine = $request->nines;
+            if(!empty($nine)){
+                $nine = implode(',', $nine);
+            }else{
+                $nine = '';
+            }
         }else{
             $nine = $request->nine;
         }
 
+        // if($request->nine == ''){
+        //     $nine = $request->nines;
+        // }else{
+        //     $nine = $request->nine;
+        // }
+
+        // if($request->ten == ''){
+        //     $ten = $request->tens;
+        // }else{
+        //     $ten = $request->ten;
+        // }
+
+
         if($request->ten == ''){
             $ten = $request->tens;
+            if(!empty($ten)){
+                $ten = implode(', ', $ten);
+            } else{
+                $ten = '';
+            }
         }else{
             $ten = $request->ten;
         }
+
 
         if($request->eleven == ''){
             $eleven = $request->elevens;
