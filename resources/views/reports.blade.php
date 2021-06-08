@@ -144,7 +144,7 @@
     <body>
         <div class='content col-md-12'><br>
         <img src="{{ asset('images/healthcare.jpg') }}" alt="image" height="100" width="100">
-            <h1> KAPS SURVEY</h1>
+        <h1><b>CHAK HCW SURVEY REPORT<b></h1>
             <h2> Knowledge, attitude and perceptions on Corona virus disease among health care workers in Kenya. </h2>
             <h4><b> Reports generated from the survey </b> </h4>
             
@@ -186,10 +186,10 @@
                                         </table>
                                     </div>
                                 </td>
-                                <!-- <td style="display:none;"></td>
                                 <td style="display:none;"></td>
                                 <td style="display:none;"></td>
-                                <td style="display:none;"></td> -->
+                                <td style="display:none;"></td>
+                                <td style="display:none;"></td>
                             </tr>
                         @endforeach
                     </tbody>
