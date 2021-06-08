@@ -71,7 +71,7 @@
             <h2> Knowledge, attitude and perceptions on Corona virus disease among health care workers in Kenya. </h2>
           
             <div class="col-md-12" style="margin-top:20px;">
-            <h2><b> Part A: Indivudual Vaccine Acceptance</b> </h2>
+            <!-- <h2><b> Part A: Individual Vaccine Acceptance</b> </h2> -->
                 <form role="form" method="post" action="{{route('addKnowledgeTwo')}}" >
                     {{ csrf_field() }}
                     <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}">
@@ -104,6 +104,7 @@
                                     <option value="Feel protected by current PPE">Feel protected by current PPE</option>
                                     <option value="It will kill me">It will kill me</option>
                                     <option value="No fears">No fears</option>
+                                    <option value="Will give me COVID-19">Will give me COVID-19</option>
                                     <option value="Other">Other</option>
                                 </select>
                                 <p></p><input id="thirteen" type="text" name="thirteen" class="form-control" style='display:none;'>
@@ -129,7 +130,7 @@
                     
                     </div>
 
-                   
+                    <!-- <button> <a href="" class="previous"> &laquo;previous</a></button> -->
                     <button type="submit" class="btn btn-primary"> Next </button>
                 </form>
             </div>

@@ -74,12 +74,13 @@
             <h2><b> Part B: Demographic data </b> </h2>
                 <form role="form" method="post" action="{{route('addDemographics')}}" >
                     {{ csrf_field() }}
-                    <input type="hidden" name="survey_id" class="form-control" value="{{$survey->id}}">
+                    <input type="hidden" name="survey_id" class="form-control" value="{{$survey->id}}"> 
+
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" ><b>1. Age in years: </b></label>
                         <div class="col-sm-10">
-                            <input min='18' type="number" name="age" class="form-control" id="age" required>
+                            <input min='18' type="number" name="age" class="form-control" id="age"  value="{{ old('age') }}" required>
                           </div>
                     </div>
                     <div class="form-group row">

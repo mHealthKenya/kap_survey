@@ -73,7 +73,7 @@
           
             <div class="col-md-12" style="margin-top:20px;">
             <!-- <h2><b> Section C: Knowledge & Attitude Questions</b> </h2> -->
-            <h2><b> Part B: Indivudual Vaccine Acceptance</b> </h2>
+            <!-- <h2><b> Part B: Indivudual Vaccine Acceptance</b> </h2> -->
                 <form role="form" method="post" action="{{route('saveKnowledgeThree')}}" >
                     {{ csrf_field() }}
                     <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}">
@@ -94,7 +94,7 @@
                     </div>
                     
                     <div class="form-group row">
-                    <h2><b> Social Norms</b> </h2>
+                    <!-- <h2><b> Social Norms</b> </h2> -->
                         <label class="col-sm-2 col-form-label" ><b>16.	If a client comes to the clinic for a COVID-19 vaccine, would your co-workers provide the vaccine if available?   </b></label>
                         <div class="col-sm-10">
                             <select class="form-control" id="sixteen" name="sixteen" onChange='displayThirtyTwo(this.value);'>
@@ -106,7 +106,7 @@
                         </div>
                         </div>
                         <div class="form-group row">
-                        <h2><b> Individual Risk Perception</b> </h2>
+                        <!-- <h2><b> Individual Risk Perception</b> </h2> -->
                         <label class="col-sm-2 col-form-label" ><b>17. Do you feel you are at high risk for contracting COVID-19 in your facility where you work?   </b></label>
                         <div class="col-sm-10">
                             <select class="form-control" id="seventeen" name="seventeens[]" onChange='displayThirtyTwo(this.value);'>

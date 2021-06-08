@@ -72,7 +72,7 @@
             <h2> Knowledge, attitude and perceptions on Corona virus disease among health care workers in Kenya. </h2>
           
             <div class="col-md-12" style="margin-top:20px;">
-            <h2><b> Part C: Demographic data</b> </h2>
+            <!-- <h2><b> Part C: Demographic data</b> </h2> -->
                 <form role="form" method="post" action="{{route('addKnowledgeOne')}}" >
                     {{ csrf_field() }}
                     <input type="hidden" name="survey_id" class="form-control" value="{{$answer->survey_id}}">
@@ -103,7 +103,7 @@
                         </div>
                     </div>
 
-                    <h2><b> Knowledge/Awareness</b> </h2>
+                    <!-- <h2><b> Knowledge/Awareness</b> </h2> -->
                     <div class="form-group row"> 
                         <label class="col-sm-2 col-form-label" ><b>8. Have you received training on adminstering any of the COVID-19 vaccines? </b></label>
                         <div class="col-sm-10">
@@ -117,7 +117,7 @@
                     </div>
                     
                     <div style = "display: none;" id="numberNine" class="form-group row">
-                    <h2><b> Sources of Information</b> </h2>
+                    <!-- <h2><b> Sources of Information</b> </h2> -->
                         <label class="col-sm-2 col-form-label" ><b>9.  If you did not receive training, where would you prefer to receive this training on administering any of the COVID-19 vaccines? </b></label>
                         <div class="col-sm-10">
                             <select id="nineSelected" multiple name="nines[]" class="selectpicker form-control" data-width="100%" data-live-search="true" onchange='loadNine();'>
@@ -178,7 +178,9 @@
                         </div>
                     </div>
 
-                   
+                    <!-- <button class="previous-button"> Back </button> -->
+                    <!-- <button> <a href="" class="previous"> &laquo;previous</a></button> -->
+                    <!-- <a href="{{ URL::previous () }}" class="btn btn-default"> Back </a> -->
                     <button type="submit" class="btn btn-primary"> Next </button>
                 </form>
             </div>
@@ -189,6 +191,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/js/bootstrap-select.min.js"></script>
         <script type="text/javascript">
+
+        // $(".previous-button").click(function(){
+        //     $('.addKnowledgeOne').prev('form').find('addKnowledgeOne').trigger('click')
+        // })
 
             //function loadNine loads all the selected text and joins them
             function loadNine(){
